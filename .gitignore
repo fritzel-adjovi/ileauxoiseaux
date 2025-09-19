@@ -1,0 +1,54 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+.env
+.env.*  # pour les variantes (.env.production, .env.local, etc.)
+
+# Dossiers de build/output
+dist/
+build/
+out/
+coverage/
+.temp/
+.cache/
+
+# IDE / éditeurs
+.vscode/
+.idea/
+*.swp
+*.sublime-project
+*.sublime-workspace
+
+# Systèmes d'exploitation
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+*.gz
+
+# Tests / snapshots
+__snapshots__/
+coverage/
+*.test.js
+*.spec.js
+
+# Autres outils
+*.local
+*.tgz
+*.zip
+
+# Static site generators (si utilisé)
+.cache/
+hugo_stats.json
+.next/
+.nuxt/
+
+# Lint
+.eslintcache
+.stylelintcache
