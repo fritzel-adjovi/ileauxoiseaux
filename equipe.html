@@ -3,112 +3,648 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Équipe - Crèche Les Petits Loups</title>
+    <title>
+      Notre Équipe - L'Île aux Oiseaux | Professionnels de la petite enfance
+    </title>
+    <meta
+      name="description"
+      content="Rencontrez l'équipe bienveillante et qualifiée de L'Île aux Oiseaux : éducateurs, auxiliaires et personnel dédié à l'épanouissement de votre enfant."
+    />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="canonical" href="https://votre-domaine.com/equipe.html" />
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
+
   <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="header__container">
-        <a href="index.html" class="header__logo">Les Petits Loups</a>
-        <nav class="header__nav" id="main-navigation" role="navigation">
-          <ul class="nav">
-            <li class="nav__item">
-              <a href="index.html" class="nav__link">Accueil</a>
-            </li>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
-            <!-- Menu déroulant Équipe -->
-            <li class="nav__item dropdown">
-              <a
-                href="equipe.html"
-                class="nav__link nav__link--active"
-                aria-current="page"
-              >
-                Équipe
-              </a>
+    <header class="header" role="banner">
+      <div class="container">
+        <div class="header__container">
+          <a href="index.html" class="header__logo">
+            <span class="header__logo-icon" aria-hidden="true">🦜</span>
+            <span>L'Île aux Oiseaux</span>
+          </a>
 
-          </li>
-            <li class="nav__item">
-              <a href="périscolaire.html" class="nav__link">Périscolaire</a>
-            </li>
-            </li>
-            <li class="nav__item">
-              <a href="contact.html" class="nav__link">Contact</a>
-            </li>
-          </ul>
-        </nav>
+          <button
+            class="header__mobile-toggle"
+            aria-expanded="false"
+            aria-controls="main-navigation"
+            aria-label="Ouvrir le menu de navigation"
+          >
+            <span aria-hidden="true">☰</span>
+          </button>
+
+          <nav class="header__nav" id="main-navigation" role="navigation">
+            <ul class="nav">
+              <li class="nav__item">
+                <a href="index.html" class="nav__link">Accueil</a>
+              
+              
+              <li class="nav__item">
+                <a
+                  href="equipe.html"
+                  class="nav__link nav__link--active"
+                  aria-current="page"
+                  >Équipe</a
+                  >
+                <li class="nav__item">
+                <a href="Périscolaire.html" class="nav__link">Périscolaire</a>
+              </li>
+              <li class="nav__item">
+                <a href="contact.html" class="nav__link">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
 
-    <!-- Main -->
-    <main>
-      <!-- Équipe -->
-      <section class="section" id="equipe">
+    <main id="main-content" class="main" role="main">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb container" aria-label="Fil d'Ariane">
+        <div class="breadcrumb__item">
+          <a href="index.html" class="breadcrumb__link">Accueil</a>
+        </div>
+        <span class="breadcrumb__separator" aria-hidden="true">/</span>
+        <div class="breadcrumb__item">
+          <span class="breadcrumb__current">Équipe</span>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="section">
         <div class="container">
-          <h1 class="section__title">Notre équipe</h1>
-          <p class="section__description">
-            L’équipe des Petits Loups est composée de professionnels qualifiés et
-            passionnés, unis par l’envie d’accompagner les enfants dans leur
-            développement et leur épanouissement.
-          </p>
+          <div class="section__header">
+            <h1 class="section__title">Notre Équipe</h1>
+            <p class="section__description">
+              Une équipe passionnée, qualifiée et bienveillante, unie par la
+              même mission : accompagner chaque enfant dans son épanouissement
+              et son développement.
+            </p>
+          </div>
+        </div>
+      </section>
 
-          <div class="team__grid">
-            <div class="team__member" id="direction">
-              <h3 class="team__name">Direction</h3>
-              <p>
-                Notre directrice coordonne l’ensemble des activités pédagogiques et
-                assure la communication avec les familles.
+      <!-- Direction -->
+      <section class="section section--alt" id="direction">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Direction</h2>
+          </div>
+
+          <div class="max-w-4xl mx-auto">
+            <div class="card">
+              <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="flex-shrink-0">
+                  <img
+                    src="assets/img/team/team-01.jpg"
+                    alt="Portrait de Madame la Directrice"
+                    class="rounded-full shadow-lg"
+                    width="200"
+                    height="200"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="flex-1 text-center md:text-left">
+                  <h3 class="text-2xl font-bold text-primary-700 mb-2">
+                    Madame [Nom à compléter]
+                  </h3>
+                  <p class="text-lg text-accent-600 mb-4">
+                    Directrice & Fondatrice
+                  </p>
+                  <p class="text-secondary mb-4 leading-relaxed">
+                    Éducatrice de formation avec plus de 15 ans d'expérience
+                    dans la petite enfance, elle a fondé L'Île aux Oiseaux en
+                    2016 avec la conviction que chaque enfant mérite un
+                    environnement bienveillant pour grandir et s'épanouir.
+                  </p>
+                  <div class="space-y-2">
+                    <p>
+                      <strong>Formation :</strong> Master en Sciences de
+                      l'Éducation
+                    </p>
+                    <p>
+                      <strong>Spécialité :</strong> Pédagogie de la petite
+                      enfance
+                    </p>
+                    <p>
+                      <strong>Expérience :</strong> 15+ années dans l'éducation
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Équipe Pédagogique -->
+      <section class="section" id="pedagogique">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Équipe Pédagogique</h2>
+            <p class="section__description">
+              Des professionnels qualifiés qui accompagnent au quotidien le
+              développement de chaque enfant
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="card text-center">
+              <div class="card__header">
+                <img
+                  src="assets/img/team/team-02.jpg"
+                  alt="Portrait de l'éducatrice principale"
+                  class="rounded-full shadow-md mx-auto mb-4"
+                  width="150"
+                  height="150"
+                  loading="lazy"
+                />
+                <h3 class="card__title">Mademoiselle [Nom]</h3>
+                <div class="badge badge--primary mb-3">
+                  Éducatrice Principale
+                </div>
+              </div>
+              <div class="card__content">
+                <p class="mb-4">
+                  Responsable du programme préscolaire (3-5 ans), elle
+                  accompagne les enfants dans leur préparation à l'école
+                  primaire avec patience et créativité.
+                </p>
+                <div class="text-sm space-y-1">
+                  <p><strong>Formation :</strong> CAP Petite Enfance</p>
+                  <p><strong>Spécialité :</strong> Éveil pédagogique</p>
+                  <p><strong>Expérience :</strong> 8 ans</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card text-center">
+              <div class="card__header">
+                <img
+                  src="assets/img/team/team-03.jpg"
+                  alt="Portrait de l'éducateur spécialisé"
+                  class="rounded-full shadow-md mx-auto mb-4"
+                  width="150"
+                  height="150"
+                  loading="lazy"
+                />
+                <h3 class="card__title">Monsieur [Nom]</h3>
+                <div class="badge badge--success mb-3">
+                  Éducateur Spécialisé
+                </div>
+              </div>
+              <div class="card__content">
+                <p class="mb-4">
+                  Spécialiste en psychomotricité, il développe les activités
+                  physiques et accompagne les enfants ayant des besoins
+                  particuliers.
+                </p>
+                <div class="text-sm space-y-1">
+                  <p><strong>Formation :</strong> Éducation Spécialisée</p>
+                  <p><strong>Spécialité :</strong> Psychomotricité</p>
+                  <p><strong>Expérience :</strong> 6 ans</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card text-center">
+              <div class="card__header">
+                <img
+                  src="assets/img/team/team-04.jpg"
+                  alt="Portrait de l'assistante pédagogique"
+                  class="rounded-full shadow-md mx-auto mb-4"
+                  width="150"
+                  height="150"
+                  loading="lazy"
+                />
+                <h3 class="card__title">Mademoiselle [Nom]</h3>
+                <div class="badge badge--accent mb-3">
+                  Assistante Pédagogique
+                </div>
+              </div>
+              <div class="card__content">
+                <p class="mb-4">
+                  En charge du groupe des tout-petits (18 mois - 3 ans), elle
+                  excelle dans l'accompagnement des premières autonomies et de
+                  la socialisation.
+                </p>
+                <div class="text-sm space-y-1">
+                  <p><strong>Formation :</strong> BEP Carrières Sanitaires</p>
+                  <p><strong>Spécialité :</strong> Développement social</p>
+                  <p><strong>Expérience :</strong> 5 ans</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Personnel de Soin -->
+      <section class="section section--alt" id="soins">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Personnel de Soin</h2>
+            <p class="section__description">
+              Professionnels de santé dédiés au bien-être et à la sécurité des
+              enfants
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="card text-center">
+              <div class="card__header">
+                <img
+                  src="assets/img/team/team-05.jpg"
+                  alt="Portrait de l'auxiliaire de puériculture"
+                  class="rounded-full shadow-md mx-auto mb-4"
+                  width="150"
+                  height="150"
+                  loading="lazy"
+                />
+                <h3 class="card__title">Madame [Nom]</h3>
+                <div class="badge badge--primary mb-3">
+                  Auxiliaire de Puériculture
+                </div>
+              </div>
+              <div class="card__content">
+                <p class="mb-4">
+                  Spécialisée dans les soins aux nourrissons et tout-petits,
+                  elle veille au bien-être physique et émotionnel de chaque
+                  enfant.
+                </p>
+                <div class="text-sm space-y-1">
+                  <p>
+                    <strong>Formation :</strong> Diplôme d'Auxiliaire de
+                    Puériculture
+                  </p>
+                  <p><strong>Spécialité :</strong> Soins nourrissons</p>
+                  <p><strong>Expérience :</strong> 10 ans</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card text-center">
+              <div class="card__header">
+                <img
+                  src="assets/img/team/team-08.jpg"
+                  alt="Portrait de l'infirmière"
+                  class="rounded-full shadow-md mx-auto mb-4"
+                  width="150"
+                  height="150"
+                  loading="lazy"
+                />
+                <h3 class="card__title">Madame [Nom]</h3>
+                <div class="badge badge--success mb-3">
+                  Infirmière & Accueil
+                </div>
+              </div>
+              <div class="card__content">
+                <p class="mb-4">
+                  Assure l'accueil des familles et veille à la santé des
+                  enfants. Premier contact chaleureux et professionnel avec
+                  l'établissement.
+                </p>
+                <div class="text-sm space-y-1">
+                  <p><strong>Formation :</strong> Diplôme d'Infirmière</p>
+                  <p><strong>Spécialité :</strong> Santé infantile</p>
+                  <p><strong>Expérience :</strong> 12 ans</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Personnel de Support -->
+      <section class="section" id="support">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Personnel de Support</h2>
+            <p class="section__description">
+              Une équipe dévouée qui contribue au bon fonctionnement quotidien
+              de l'établissement
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="card text-center">
+              <div class="card__header">
+                <img
+                  src="assets/img/team/team-06.jpg"
+                  alt="Portrait du chef cuisinier"
+                  class="rounded-full shadow-md mx-auto mb-4"
+                  width="150"
+                  height="150"
+                  loading="lazy"
+                />
+                <h3 class="card__title">Monsieur [Nom]</h3>
+                <div class="badge badge--warning mb-3">Chef Cuisinier</div>
+              </div>
+              <div class="card__content">
+                <p class="mb-4">
+                  Passionné de cuisine saine, il élabore des menus équilibrés
+                  avec des produits frais locaux, adaptés aux besoins
+                  nutritionnels des enfants.
+                </p>
+                <div class="text-sm space-y-1">
+                  <p><strong>Formation :</strong> CAP Cuisine</p>
+                  <p><strong>Spécialité :</strong> Cuisine enfantine</p>
+                  <p><strong>Expérience :</strong> 7 ans</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card text-center">
+              <div class="card__header">
+                <img
+                  src="assets/img/team/team-07.jpg"
+                  alt="Portrait de l'agent d'entretien"
+                  class="rounded-full shadow-md mx-auto mb-4"
+                  width="150"
+                  height="150"
+                  loading="lazy"
+                />
+                <h3 class="card__title">Monsieur [Nom]</h3>
+                <div class="badge badge--primary mb-3">Agent d'Entretien</div>
+              </div>
+              <div class="card__content">
+                <p class="mb-4">
+                  Garant de la propreté et de la sécurité des espaces, il
+                  maintient l'établissement dans un état impeccable pour le
+                  bien-être de tous.
+                </p>
+                <div class="text-sm space-y-1">
+                  <p><strong>Formation :</strong> Hygiène et Sécurité</p>
+                  <p><strong>Spécialité :</strong> Entretien collectivités</p>
+                  <p><strong>Expérience :</strong> 4 ans</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Values -->
+      <section class="section section--alt" id="valeurs-equipe">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Nos Valeurs d'Équipe</h2>
+            <p class="section__description">
+              Ce qui nous unit dans notre mission quotidienne
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <img
+                  src="assets/img/activities/activity-11.jpg"
+                  alt="Bienveillance"
+                  class="w-12 h-12 rounded-full object-cover"
+                />
+              </div>
+              <h4 class="text-lg font-semibold text-primary-700 mb-2">
+                Bienveillance
+              </h4>
+              <p class="text-sm text-secondary">
+                Chaque geste, chaque parole est empreinte de douceur et de
+                respect pour l'enfant et sa famille.
               </p>
             </div>
 
-            <div class="team__member" id="soins">
-              <h3 class="team__name">Personnel de soin</h3>
-              <p>
-                Nos auxiliaires de puériculture et éducateurs de jeunes enfants
-                accompagnent les enfants au quotidien, avec bienveillance et
-                professionnalisme.
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <img
+                  src="assets/img/activities/activity-05.jpg"
+                  alt="Professionnalisme"
+                  class="w-12 h-12 rounded-full object-cover"
+                />
+              </div>
+              <h4 class="text-lg font-semibold text-success-700 mb-2">
+                Professionnalisme
+              </h4>
+              <p class="text-sm text-secondary">
+                Formation continue, respect des protocoles et recherche
+                permanente d'excellence dans nos pratiques.
               </p>
             </div>
 
-            <div class="team__member" id="support">
-              <h3 class="team__name">Personnel de support</h3>
-              <p>
-                L’équipe de cuisine, d’entretien et d’animation contribue au bon
-                fonctionnement de la crèche et au bien-être des enfants.
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <img
+                  src="assets/img/activities/activity-03.jpg"
+                  alt="Écoute"
+                  class="w-12 h-12 rounded-full object-cover"
+                />
+              </div>
+              <h4 class="text-lg font-semibold text-accent-700 mb-2">
+                Écoute Active
+              </h4>
+              <p class="text-sm text-secondary">
+                Attention portée aux besoins de chaque enfant et communication
+                transparente avec les familles.
+              </p>
+            </div>
+
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-warning-100 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <img
+                  src="assets/img/activities/activity-01.jpg"
+                  alt="Créativité"
+                  class="w-12 h-12 rounded-full object-cover"
+                />
+              </div>
+              <h4 class="text-lg font-semibold text-warning-700 mb-2">
+                Créativité
+              </h4>
+              <p class="text-sm text-secondary">
+                Innovation pédagogique et adaptation constante pour stimuler
+                l'épanouissement de chaque personnalité.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Valeurs -->
-      <section class="section" id="valeurs-equipe">
+      <!-- Formation Continue -->
+      <section class="section" id="formation">
         <div class="container">
-          <h2 class="section__title">Nos valeurs</h2>
-          <p class="section__description">
-            Respect, écoute, et développement harmonieux guident notre action au
-            quotidien.
-          </p>
+          <div class="section__header">
+            <h2 class="section__title">Formation Continue</h2>
+            <p class="section__description">
+              Notre engagement pour l'excellence passe par la formation
+              permanente de notre équipe
+            </p>
+          </div>
+
+          <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8">
+              <div class="card text-center">
+                <div class="card__content">
+                  <h4 class="text-lg font-semibold mb-3 text-primary-700">
+                    Sessions Mensuelles
+                  </h4>
+                  <p class="text-sm text-secondary">
+                    Réunions d'équipe pour échanger sur les pratiques, partager
+                    les observations et harmoniser les approches.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card text-center">
+                <div class="card__content">
+                  <h4 class="text-lg font-semibold mb-3 text-primary-700">
+                    Formations Externes
+                  </h4>
+                  <p class="text-sm text-secondary">
+                    Participation régulière à des séminaires et formations sur
+                    les nouvelles approches pédagogiques.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card text-center">
+                <div class="card__content">
+                  <h4 class="text-lg font-semibold mb-3 text-primary-700">
+                    Échange de Pratiques
+                  </h4>
+                  <p class="text-sm text-secondary">
+                    Réseau avec d'autres établissements pour enrichir nos
+                    méthodes et rester à la pointe de l'éducation.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- Formation -->
-      <section class="section" id="formation">
+      <!-- CTA Section -->
+      <section class="section section--alt" id="rencontrer">
         <div class="container">
-          <h2 class="section__title">Formation continue</h2>
-          <p class="section__description">
-            Nos professionnels participent régulièrement à des formations pour
-            enrichir leurs pratiques et garantir une qualité d’accueil optimale.
-          </p>
+          <div class="section__header">
+            <h2 class="section__title">Rencontrer notre équipe</h2>
+            <p class="section__description">
+              Rien ne remplace une rencontre humaine. Venez découvrir les
+              personnes qui prendront soin de votre enfant au quotidien.
+            </p>
+          </div>
+
+          <div style="text-align: center">
+            <a href="contact.html" class="btn btn--primary btn--lg">
+              Planifier une rencontre
+            </a>
+            <a
+              href="galerie.html"
+              class="btn btn--secondary btn--lg"
+              style="margin-left: 1rem"
+            >
+              Voir notre quotidien
+            </a>
+          </div>
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container footer__container">
-        <p class="footer__text">© 2024 Crèche Les Petits Loups</p>
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__section">
+            <h3 class="footer__title">L'Île aux Oiseaux</h3>
+            <p>
+              Une équipe passionnée et professionnelle, unie par la même mission
+              : offrir à chaque enfant l'environnement le plus propice à son
+              épanouissement.
+            </p>
+          </div>
+
+          <div class="footer__section">
+            <h3 class="footer__title">Notre Équipe</h3>
+            <ul class="footer__links">
+              <li><a href="#direction" class="footer__link">Direction</a></li>
+              <li>
+                <a href="#pedagogique" class="footer__link"
+                  >Équipe pédagogique</a
+                >
+              </li>
+              <li>
+                <a href="#soins" class="footer__link">Personnel de soin</a>
+              </li>
+              <li>
+                <a href="#support" class="footer__link">Personnel de support</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__section">
+            <h3 class="footer__title">Nos Valeurs</h3>
+            <ul class="footer__links">
+              <li>
+                <a href="#valeurs-equipe" class="footer__link">Bienveillance</a>
+              </li>
+              <li>
+                <a href="#formation" class="footer__link">Formation continue</a>
+              </li>
+              <li>
+                <a href="pedagogie.html" class="footer__link"
+                  >Professionnalisme</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="footer__link">Écoute active</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__section">
+            <h3 class="footer__title">Contact</h3>
+            <p>Zone résidentielle, Cotonou</p>
+            <p>
+              <a href="tel:+22964834242" class="footer__link"
+                >+229 64 83 42 42</a
+              >
+            </p>
+            <p>
+              <a href="mailto:ileauxoiseaux2016@gmail.com" class="footer__link"
+                >ileauxoiseaux2016@gmail.com</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© 2016-2025 L'Île aux Oiseaux - Tous droits réservés</p>
+          <p>
+            <a href="mentions-legales.html" class="footer__link"
+              >Mentions légales et vie privée</a
+            >
+          </p>
+          <p>
+            Développé et maintenu par
+            <a
+              href="https://www.linkedin.com/in/fritzel"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer__link"
+            >
+              <strong>@Fritzel</strong>
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
+
+    <script type="module" src="assets/js/main.js"></script>
   </body>
-</html>
+</html>.   je veux enlever pédagogie classe galerie 
