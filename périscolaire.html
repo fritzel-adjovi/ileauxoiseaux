@@ -6,8 +6,9 @@
     <title>Périscolaire - L'Île aux Oiseaux | Activités après l'école</title>
     <meta name="description" content="Centre de loisirs périscolaire L'Île aux Oiseaux à Cotonou. Programme d'activités pour enfants de 3 à 9 ans après l'école et pendant les vacances.">
     
-   <link rel="stylesheet" href="assets/css/styles.css" />
-<link rel="stylesheet" href="assets/css/périscolaire.css" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/periscolaire.css" />
 </head>
 
 <body>
@@ -29,14 +30,9 @@
                         <li class="nav__item">
                             <a href="index.html" class="nav__link">Garderie</a>
                         </li>
-                         <li class="nav__item">
-                <a
-                  href="galerie.html"
-                  class="nav__link nav__link--active"
-                  aria-current="page"
-                  >Périscolaire</a
-                >
-              </li>
+                        <li class="nav__item">
+                            <a href="periscolaire.html" class="nav__link nav__link--active" aria-current="page">Périscolaire</a>
+                        </li>
                         <li class="nav__item">
                             <a href="tarifs.html" class="nav__link">Tarifs</a>
                         </li>
@@ -66,8 +62,8 @@
                     <a href="#contact-cta" class="btn btn--secondary btn--lg">
                         Réserver une place
                     </a>
-                    <a href="#programmes" class="btn btn--primary btn--lg">
-                        Découvrir les activités
+                    <a href="#planning" class="btn btn--primary btn--lg">
+                        Voir le planning
                     </a>
                 </div>
             </div>
@@ -94,25 +90,25 @@
                     </p>
                 </div>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
-                    <div class="info-card" style="text-align: center; border-left: 4px solid var(--primary-color);">
-                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">📅 Lundi - Vendredi</h3>
-                        <div style="font-size: 1.25rem; font-weight: bold; color: var(--secondary-color);">
+                <div class="horaires-grid">
+                    <div class="info-card horaires-card">
+                        <h3 class="horaires-card__title">📅 Lundi - Vendredi</h3>
+                        <div class="horaires-card__time">
                             <div>15h - 18h</div>
-                            <div style="margin-top: 0.5rem; font-size: 1rem; color: var(--text-light);">ou</div>
+                            <div class="horaires-card__or">ou</div>
                             <div>11h30 - 18h</div>
                         </div>
-                        <p style="margin-top: 1rem; color: var(--text-light);">
+                        <p class="horaires-card__note">
                             Selon les besoins de votre famille
                         </p>
                     </div>
 
-                    <div class="info-card" style="text-align: center; border-left: 4px solid var(--accent-color);">
-                        <h3 style="color: var(--accent-color); margin-bottom: 1rem;">🏖️ Vacances Scolaires</h3>
-                        <div style="font-size: 1.25rem; font-weight: bold; color: var(--secondary-color);">
+                    <div class="info-card horaires-card horaires-card--vacances">
+                        <h3 class="horaires-card__title">🏖️ Vacances Scolaires</h3>
+                        <div class="horaires-card__time">
                             <div>Journées complètes</div>
                         </div>
-                        <p style="margin-top: 1rem; color: var(--text-light);">
+                        <p class="horaires-card__note">
                             Programme d'activités enrichi pendant les congés
                         </p>
                     </div>
@@ -130,26 +126,26 @@
                     </p>
                 </div>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+                <div class="planning-grid">
                     <!-- Lundi -->
-                    <div class="info-card" style="border-left: 4px solid #4CAF50;">
-                        <h3 style="color: #4CAF50; text-align: center; margin-bottom: 1.5rem;">LUNDI</h3>
-                        <div style="margin-bottom: 1rem;">
-                            <div style="font-weight: bold; color: var(--primary-color);">15h45</div>
-                            <div style="color: var(--text-light);">🏺 Poterie/Modelage d'argile</div>
+                    <div class="info-card planning-card planning-card--lundi">
+                        <h3 class="planning-card__day">LUNDI</h3>
+                        <div class="planning-card__activity">
+                            <div class="planning-card__time">15h45</div>
+                            <div class="planning-card__desc">🏺 Poterie/Modelage d'argile</div>
                         </div>
-                        <div>
-                            <div style="font-weight: bold; color: var(--primary-color);">16h45</div>
-                            <div style="color: var(--text-light);">🇧🇯 Fongbe (apprentissage ludique)</div>
+                        <div class="planning-card__activity">
+                            <div class="planning-card__time">16h45</div>
+                            <div class="planning-card__desc">🇧🇯 Fongbe (apprentissage ludique)</div>
                         </div>
                     </div>
 
                     <!-- Mardi -->
-                    <div class="info-card" style="border-left: 4px solid #2196F3;">
-                        <h3 style="color: #2196F3; text-align: center; margin-bottom: 1.5rem;">MARDI</h3>
-                        <div>
-                            <div style="font-weight: bold; color: var(--primary-color);">16h00</div>
-                            <div style="color: var(--text-light);">
+                    <div class="info-card planning-card planning-card--mardi">
+                        <h3 class="planning-card__day">MARDI</h3>
+                        <div class="planning-card__activity">
+                            <div class="planning-card__time">16h00</div>
+                            <div class="planning-card__desc">
                                 ⚽ Multisports :<br>
                                 • Football & Roller<br>
                                 • Karaté & Basket<br>
@@ -159,49 +155,49 @@
                     </div>
 
                     <!-- Mercredi -->
-                    <div class="info-card" style="border-left: 4px solid #FF9800;">
-                        <h3 style="color: #FF9800; text-align: center; margin-bottom: 1.5rem;">MERCREDI</h3>
-                        <div style="margin-bottom: 1rem;">
-                            <div style="font-weight: bold; color: var(--primary-color);">15h00</div>
-                            <div style="color: var(--text-light);">🍳 Cuisine/Jardinage</div>
+                    <div class="info-card planning-card planning-card--mercredi">
+                        <h3 class="planning-card__day">MERCREDI</h3>
+                        <div class="planning-card__activity">
+                            <div class="planning-card__time">15h00</div>
+                            <div class="planning-card__desc">🍳 Cuisine/Jardinage</div>
                         </div>
-                        <div>
-                            <div style="font-weight: bold; color: var(--primary-color);">16h15</div>
-                            <div style="color: var(--text-light);">💃 Salsa / 🏊‍♀️ Natation</div>
+                        <div class="planning-card__activity">
+                            <div class="planning-card__time">16h15</div>
+                            <div class="planning-card__desc">💃 Salsa / 🏊‍♀️ Natation</div>
                         </div>
                     </div>
 
                     <!-- Jeudi -->
-                    <div class="info-card" style="border-left: 4px solid #9C27B0;">
-                        <h3 style="color: #9C27B0; text-align: center; margin-bottom: 1.5rem;">JEUDI</h3>
-                        <div style="margin-bottom: 1rem;">
-                            <div style="font-weight: bold; color: var(--primary-color);">16h00</div>
-                            <div style="color: var(--text-light);">🇬🇧 Anglais (méthode interactive)</div>
+                    <div class="info-card planning-card planning-card--jeudi">
+                        <h3 class="planning-card__day">JEUDI</h3>
+                        <div class="planning-card__activity">
+                            <div class="planning-card__time">16h00</div>
+                            <div class="planning-card__desc">🇬🇧 Anglais (méthode interactive)</div>
                         </div>
-                        <div>
-                            <div style="font-weight: bold; color: var(--primary-color);">16h00</div>
-                            <div style="color: var(--text-light);">🏃‍♂️ Tennis, Foot, Roller, Karaté</div>
+                        <div class="planning-card__activity">
+                            <div class="planning-card__time">16h00</div>
+                            <div class="planning-card__desc">🏃‍♂️ Tennis, Foot, Roller, Karaté</div>
                         </div>
                     </div>
 
                     <!-- Vendredi -->
-                    <div class="info-card" style="border-left: 4px solid #E91E63;">
-                        <h3 style="color: #E91E63; text-align: center; margin-bottom: 1.5rem;">VENDREDI</h3>
-                        <div>
-                            <div style="font-weight: bold; color: var(--primary-color);">16h00</div>
-                            <div style="color: var(--text-light);">🎭 Théâtre<br>(expression & créativité)</div>
+                    <div class="info-card planning-card planning-card--vendredi">
+                        <h3 class="planning-card__day">VENDREDI</h3>
+                        <div class="planning-card__activity">
+                            <div class="planning-card__time">16h00</div>
+                            <div class="planning-card__desc">🎭 Théâtre<br>(expression & créativité)</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Cours de Musique -->
-                <div class="info-card" style="background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%); color: white; text-align: center;">
-                    <h3 style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+                <div class="info-card musique-card">
+                    <h3 class="musique-card__title">
                         <span>🎵</span>
                         Cours de Musique
                         <span>🎹</span>
                     </h3>
-                    <p style="font-size: 1.125rem;">
+                    <p class="musique-card__desc">
                         Guitare, Piano, Ukulélé... selon disponibilité des enseignants
                     </p>
                 </div>
@@ -225,7 +221,7 @@
                             <span class="info-card__icon">👶</span>
                             Qui peut participer ?
                         </h3>
-                        <p style="font-weight: 600; margin-bottom: 1rem;">Enfants de 3 à 9 ans</p>
+                        <p class="info-card__highlight">Enfants de 3 à 9 ans</p>
                         <p><strong>Horaires :</strong></p>
                         <ul class="activities-list">
                             <li>Du lundi au vendredi après l'école</li>
@@ -239,7 +235,7 @@
                             <span class="info-card__icon">⚽</span>
                             Activités Sportives
                         </h3>
-                        <p style="margin-bottom: 1rem;">Dans un <strong>centre partenaire</strong> avec des équipements de qualité :</p>
+                        <p class="info-card__intro">Dans un <strong>centre partenaire</strong> avec des équipements de qualité :</p>
                         <ul class="activities-list">
                             <li>Terrain de football</li>
                             <li>Court de tennis 🎾</li>
@@ -255,7 +251,7 @@
                             <span class="info-card__icon">🌍</span>
                             Apprentissage des Langues
                         </h3>
-                        <p style="margin-bottom: 1rem;"><strong>Sessions pratiques et ludiques :</strong></p>
+                        <p class="info-card__intro"><strong>Sessions pratiques et ludiques :</strong></p>
                         <ul class="activities-list">
                             <li>🇧🇯 Fongbe (langue locale)</li>
                             <li>🇬🇧 Anglais conversationnel</li>
@@ -271,7 +267,7 @@
                             <span class="info-card__icon">🎭</span>
                             Théâtre & Expression
                         </h3>
-                        <p style="margin-bottom: 1rem;"><strong>Développement artistique et personnel :</strong></p>
+                        <p class="info-card__intro"><strong>Développement artistique et personnel :</strong></p>
                         <ul class="activities-list">
                             <li>Ateliers théâtre hebdomadaires</li>
                             <li>Plusieurs représentations dans l'année</li>
@@ -288,12 +284,12 @@
                         <span>🤝</span>
                         Nos Partenariats Enrichissants
                     </h3>
-                    <p style="font-size: 1.125rem;">
+                    <p class="partnership-card__desc">
                         Grâce à nos différents partenariats, des <strong>passionnés</strong> 
                         transmettent leurs savoirs et aptitudes, offrant des expériences 
                         très <strong>enrichissantes pour les enfants</strong> 🤗
                     </p>
-                    <p style="margin-top: 1rem;">
+                    <p class="partnership-card__note">
                         Chaque intervenant apporte son expertise pour un apprentissage 
                         de qualité et diversifié.
                     </p>
@@ -312,51 +308,51 @@
                 </div>
 
                 <!-- Tarifs par après-midi -->
-                <div style="margin-bottom: 3rem;">
-                    <h3 style="text-align: center; font-size: 1.75rem; color: var(--primary-color); margin-bottom: 2rem;">
+                <div class="tarifs-section">
+                    <h3 class="tarifs-section__title">
                         📅 Tarif par après-midi (15h-18h)
                     </h3>
                     
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                        <div class="info-card" style="border-left: 4px solid #4CAF50; text-align: center;">
-                            <h4 style="color: #4CAF50; margin-bottom: 1rem;">LUNDI ou MERCREDI</h4>
-                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--secondary-color); margin-bottom: 0.5rem;">
+                    <div class="tarifs-grid">
+                        <div class="info-card tarif-card tarif-card--lundi-mercredi">
+                            <h4 class="tarif-card__day">LUNDI ou MERCREDI</h4>
+                            <div class="tarif-card__price">
                                 4.000 Fcfa
                             </div>
-                            <div style="color: var(--text-light);">1 activité</div>
-                            <div style="margin-top: 1rem; font-size: 1.25rem; font-weight: bold; color: var(--primary-color);">
+                            <div class="tarif-card__desc">1 activité</div>
+                            <div class="tarif-card__price tarif-card__price--secondary">
                                 6.000 Fcfa
                             </div>
-                            <div style="color: var(--text-light);">2 activités</div>
+                            <div class="tarif-card__desc">2 activités</div>
                         </div>
 
-                        <div class="info-card" style="border-left: 4px solid #2196F3; text-align: center;">
-                            <h4 style="color: #2196F3; margin-bottom: 1rem;">MARDI (Multisport)</h4>
-                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--secondary-color);">
+                        <div class="info-card tarif-card tarif-card--mardi">
+                            <h4 class="tarif-card__day">MARDI (Multisport)</h4>
+                            <div class="tarif-card__price">
                                 5.000 Fcfa
                             </div>
-                            <div style="color: var(--text-light); margin-top: 0.5rem;">
+                            <div class="tarif-card__desc">
                                 Accès à tous les sports<br>
                                 <small>(Inscription annuelle: 15.000 Fcfa)</small>
                             </div>
                         </div>
 
-                        <div class="info-card" style="border-left: 4px solid #9C27B0; text-align: center;">
-                            <h4 style="color: #9C27B0; margin-bottom: 1rem;">JEUDI</h4>
-                            <div style="font-size: 1.25rem; font-weight: bold; color: var(--secondary-color); margin-bottom: 0.5rem;">
+                        <div class="info-card tarif-card tarif-card--jeudi">
+                            <h4 class="tarif-card__day">JEUDI</h4>
+                            <div class="tarif-card__price-small">
                                 Anglais: 4.000 Fcfa
                             </div>
-                            <div style="font-size: 1.25rem; font-weight: bold; color: var(--secondary-color);">
+                            <div class="tarif-card__price-small">
                                 Multisport: 5.000 Fcfa
                             </div>
                         </div>
 
-                        <div class="info-card" style="border-left: 4px solid #E91E63; text-align: center;">
-                            <h4 style="color: #E91E63; margin-bottom: 1rem;">VENDREDI</h4>
-                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--secondary-color);">
+                        <div class="info-card tarif-card tarif-card--vendredi">
+                            <h4 class="tarif-card__day">VENDREDI</h4>
+                            <div class="tarif-card__price">
                                 4.000 Fcfa
                             </div>
-                            <div style="color: var(--text-light); margin-top: 0.5rem;">
+                            <div class="tarif-card__desc">
                                 Théâtre
                             </div>
                         </div>
@@ -364,22 +360,22 @@
                 </div>
 
                 <!-- Services additionnels -->
-                <div style="margin-bottom: 3rem;">
-                    <h3 style="text-align: center; font-size: 1.75rem; color: var(--primary-color); margin-bottom: 2rem;">
+                <div class="tarifs-section">
+                    <h3 class="tarifs-section__title">
                         🍽️ Services Additionnels
                     </h3>
                     
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                        <div class="info-card" style="border-left: 4px solid var(--warning-color); text-align: center;">
-                            <h4 style="color: var(--warning-color); margin-bottom: 1rem;">🥪 Déjeuner</h4>
-                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--secondary-color);">
+                    <div class="services-grid">
+                        <div class="info-card service-card service-card--dejeuner">
+                            <h4 class="service-card__title">🥪 Déjeuner</h4>
+                            <div class="service-card__price">
                                 2500 à 3000 Fcfa
                             </div>
                         </div>
 
-                        <div class="info-card" style="border-left: 4px solid var(--accent-color); text-align: center;">
-                            <h4 style="color: var(--accent-color); margin-bottom: 1rem;">🍪 Goûter</h4>
-                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--secondary-color);">
+                        <div class="info-card service-card service-card--gouter">
+                            <h4 class="service-card__title">🍪 Goûter</h4>
+                            <div class="service-card__price">
                                 800 à 1000 Fcfa
                             </div>
                         </div>
@@ -387,40 +383,47 @@
                 </div>
 
                 <!-- Ramassage scolaire -->
-                <div class="info-card" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); color: white; text-align: center;">
-                    <h3 style="margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                <div class="info-card transport-card">
+                    <h3 class="transport-card__title">
                         <span>🚌</span>
                         Ramassage Scolaire
                     </h3>
-                    <div style="font-size: 1.25rem; margin-bottom: 1rem;">
+                    <div class="transport-card__details">
                         <div><strong>Haie-vive, Cocotiers:</strong> 1000 Fcfa/trajet</div>
-                        <div style="margin-top: 0.5rem;"><strong>Autres quartiers:</strong> Coût à préciser</div>
+                        <div><strong>Autres quartiers:</strong> Coût à préciser</div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Contact CTA Section -->
         <section class="section" id="contact-cta">
             <div class="container">
                 <div class="contact-section">
                     <h2>📞 Réservations & Informations</h2>
-                    <p style="font-size: 1.25rem; margin-bottom: 1rem;">
+                    <p class="contact-section__desc">
                         Pour inscrire votre enfant et obtenir plus d'informations sur nos programmes
                     </p>
                     
+                    <div class="contact-section__address">
+                        <div class="contact-address__label">📍 <strong>Adresse</strong></div>
+                        <div class="contact-address__text">Dans la rue de l'agence principale Moov</div>
+                    </div>
+                    
                     <a href="tel:+22964834242" class="phone-number">
-                        📱 64 83 42 42
+                        📱 01 64 83 42 42
                     </a>
                     
-                    <div style="margin-top: 2rem;">
-                        <a href="tel:+22964834242" class="btn btn--secondary btn--lg" style="margin: 0.5rem;">
+                    <div class="contact-section__actions">
+                        <a href="tel:+22964834242" class="btn btn--secondary btn--lg">
                             Appeler maintenant
                         </a>
-                        <a href="https://wa.me/22964834242" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer" style="margin: 0.5rem;">
+                        <a href="https://wa.me/22964834242?text=Bonjour, je souhaite des informations sur le centre périscolaire L'île aux Oiseaux" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
                             WhatsApp
                         </a>
                     </div>
                     
-                    <p style="margin-top: 2rem; font-size: 1.25rem;">À bientôt ! 👋</p>
+                    <p class="contact-section__closing">À bientôt ! 👋</p>
                 </div>
             </div>
         </section>
@@ -441,8 +444,8 @@
                 <div class="footer__section">
                     <h3 class="footer__title">Nos Services</h3>
                     <ul class="footer__links">
-                        <li><a href="#" class="footer__link">Garderie (2 mois - 5 ans)</a></li>
-                        <li><a href="#" class="footer__link">Périscolaire (3 - 9 ans)</a></li>
+                        <li><a href="index.html" class="footer__link">Garderie (2 mois - 5 ans)</a></li>
+                        <li><a href="periscolaire.html" class="footer__link">Périscolaire (3 - 9 ans)</a></li>
                         <li><a href="#" class="footer__link">Activités vacances</a></li>
                         <li><a href="#" class="footer__link">Programmes éducatifs</a></li>
                     </ul>
@@ -476,49 +479,8 @@
             </div>
         </div>
     </footer>
-    <script>
-        // Mobile menu toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileToggle = document.querySelector('.header__mobile-toggle');
-            const nav = document.querySelector('.header__nav');
 
-            if (mobileToggle && nav) {
-                mobileToggle.addEventListener('click', function() {
-                    nav.classList.toggle('nav--open');
-                    const isOpen = nav.classList.contains('nav--open');
-                    mobileToggle.setAttribute('aria-expanded', isOpen);
-                    mobileToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu de navigation');
-                });
-            }
-
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!nav.contains(event.target) && !mobileToggle.contains(event.target)) {
-                    nav.classList.remove('nav--open');
-                    mobileToggle.setAttribute('aria-expanded', 'false');
-                    mobileToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
-                }
-            });
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <!-- Scripts -->
+    <script type="module" src="assets/js/main.js"></script>
 </body>
 </html>
-
-
-
-
-
