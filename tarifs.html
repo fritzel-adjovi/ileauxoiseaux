@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifs - L'Île aux Oiseaux | Périscolaire</title>
+    <meta name="description" content="Découvrez les tarifs flexibles du centre périscolaire L'Île aux Oiseaux pour les enfants de 3 à 9 ans.">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/periscolaire.css" />
+</head>
+<body>
+    <!-- Header (identique à periscolaire.html) -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header__container">
+                <a href="index.html" class="header__logo" aria-label="L'Île aux Oiseaux - Retour à l'accueil">
+                    <span class="header__logo-icon" aria-hidden="true">🦜</span>
+                    <span>L'Île aux Oiseaux</span>
+                </a>
+
+                <button class="header__mobile-toggle" aria-expanded="false" aria-controls="main-navigation" aria-label="Ouvrir le menu de navigation">
+                    <span aria-hidden="true">☰</span>
+                </button>
+
+                <nav class="header__nav" id="main-navigation" role="navigation" aria-label="Navigation principale">
+                    <ul class="nav">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Garderie</a></li>
+                        <li class="nav__item"><a href="periscolaire.html" class="nav__link">Périscolaire</a></li>
+                        <li class="nav__item"><a href="tarifs.html" class="nav__link nav__link--active" aria-current="page">Tarifs</a></li>
+                        <li class="nav__item"><a href="equipe.html" class="nav__link">Équipe</a></li>
+                        <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content : Tarifs -->
+    <main role="main">
+        <section class="section section--alt" id="tarifs">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Tarifs</h2>
+                    <p class="section__description">
+                        Des formules flexibles adaptées à vos besoins
+                    </p>
+                </div>
+
+                <!-- Tarifs par après-midi -->
+                <div class="tarifs-section">
+                    <h3 class="tarifs-section__title">📅 Tarif par après-midi (15h-18h)</h3>
+                    <div class="tarifs-grid">
+                        <!-- Vos cartes tarifaires ici -->
+                    </div>
+                </div>
+
+                <!-- Services additionnels -->
+                <div class="tarifs-section">
+                    <h3 class="tarifs-section__title">🍽️ Services Additionnels</h3>
+                    <div class="services-grid">
+                        <!-- Vos cartes services ici -->
+                    </div>
+                </div>
+
+                <!-- Ramassage scolaire -->
+                <div class="info-card transport-card">
+                    <h3 class="transport-card__title">🚌 Ramassage Scolaire</h3>
+                    <div class="transport-card__details">
+                        <div><strong>Haie-vive, Cocotiers:</strong> 1000 Fcfa/trajet</div>
+                        <div><strong>Autres quartiers:</strong> Coût à préciser</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (identique à periscolaire.html) -->
+    <footer class="footer" role="contentinfo">
+        <!-- Votre footer existant -->
+    </footer>
+
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
