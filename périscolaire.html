@@ -1,1 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centre Périscolaire - L'Île aux Oiseaux | Activités après l'école</title>
+    <meta name="description" content="Centre de loisirs périscolaire L'Île aux Oiseaux à Cotonou. Programme d'activités pour enfants de 3 à 9 ans après l'école et pendant les vacances.">
+    
+   
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header__container">
+                <a href="index.html" class="header__logo" aria-label="L'Île aux Oiseaux - Retour à l'accueil">
+                    <span class="header__logo-icon" aria-hidden="true">🦜</span>
+                    <span>L'Île aux Oiseaux</span>
+                </a>
+
+                <button class="header__mobile-toggle" aria-expanded="false" aria-controls="main-navigation" aria-label="Ouvrir le menu de navigation">
+                    <span aria-hidden="true">☰</span>
+                </button>
+
+                <nav class="header__nav" id="main-navigation" role="navigation" aria-label="Navigation principale">
+                    <ul class="nav">
+                        <li class="nav__item">
+                            <a href="index.html" class="nav__link">Garderie</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="périscolaire.html" class="nav__link nav__link--active" aria-current="page">Périscolaire</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="tarifs.html" class="nav__link">Tarifs</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="equipe.html" class="nav__link">Équipe</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="contact.html" class="nav__link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main role="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">🏝️ Centre de Loisirs Périscolaire</h1>
+                <p class="hero__subtitle">
+                    Un programme enrichissant pour vos enfants de 3 à 9 ans, 
+                    après l'école et pendant les vacances
+                </p>
+                <div class="hero__actions">
+                    <a href="#contact-cta" class="btn btn--secondary btn--lg">
+                        Réserver une place
+                    </a>
+                    <a href="#programmes" class="btn btn--primary btn--lg">
+                        Découvrir les activités
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Welcome Message -->
+        <section class="section">
+            <div class="container">
+                <div class="welcome-message">
+                    <h2>👋🏽 Chers parents !</h2>
+                    <p>Voici le programme actualisé de notre centre de loisirs <strong>"L'île aux Oiseaux"</strong>.</p>
+                    <p>Il est conçu pour les enfants de <strong>3 à 9 ans</strong>, du lundi au vendredi après l'école et pendant les vacances.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horaires Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Horaires d'Accueil</h2>
+                    <p class="section__description">
+                        Accueille vos enfants de 3 à 9 ans, en périscolaire
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+                    <div class="info-card" style="text-align: center; border-left: 4px solid var(--primary-color);">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">📅 Lundi - Vendredi</h3>
+                        <div style="font-size: 1.25rem; font-weight: bold; color: var(--secondary-color);">
+                            <div>15h - 18h</div>
+                            <div style="margin-top: 0.5rem; font-size: 1rem; color: var(--text-light);">ou</div>
+                            <div>11h30 - 18h</div>
+                        </div>
+                        <p style="margin-top: 1rem; color: var(--text-light);">
+                            Selon les besoins de votre famille
+                        </p>
+                    </div>
+
+                    <div class="info-card" style="text-align: center; border-left: 4px solid var(--accent-color);">
+                        <h3 style="color: var(--accent-color); margin-bottom: 1rem;">🏖️ Vacances Scolaires</h3>
+                        <div style="font-size: 1.25rem; font-weight: bold; color: var(--secondary-color);">
+                            <div>Journées complètes</div>
+                        </div>
+                        <p style="margin-top: 1rem; color: var(--text-light);">
+                            Programme d'activités enrichi pendant les congés
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Planning Section -->
+        <section class="section section--alt" id="planning">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Planning Hebdomadaire</h2>
+                    <p class="section__description">
+                        Un programme varié et équilibré pour chaque jour de la semaine
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+                    <!-- Lundi -->
+                    <div class="info-card" style="border-left: 4px solid #4CAF50;">
+                        <h3 style="color: #4CAF50; text-align: center; margin-bottom: 1.5rem;">LUNDI</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <div style="font-weight: bold; color: var(--primary-color);">15h45</div>
+                            <div style="color: var(--text-light);">🏺 Poterie/Modelage d'argile</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: bold; color: var(--primary-color);">16h45</div>
+                            <div style="color: var(--text-light);">🇧🇯 Fongbe (apprentissage ludique)</div>
+                        </div>
+                    </div>
+
+                    <!-- Mardi -->
+                    <div class="info-card" style="border-left: 4px solid #2196F3;">
+                        <h3 style="color: #2196F3; text-align: center; margin-bottom: 1.5rem;">MARDI</h3>
+                        <div>
+                            <div style="font-weight: bold; color: var(--primary-color);">16h00</div>
+                            <div style="color: var(--text-light);">
+                                ⚽ Multisports :<br>
+                                • Football & Roller<br>
+                                • Karaté & Basket<br>
+                                • Tennis
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mercredi -->
+                    <div class="info-card" style="border-left: 4px solid #FF9800;">
+                        <h3 style="color: #FF9800; text-align: center; margin-bottom: 1.5rem;">MERCREDI</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <div style="font-weight: bold; color: var(--primary-color);">15h00</div>
+                            <div style="color: var(--text-light);">🍳 Cuisine/Jardinage</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: bold; color: var(--primary-color);">16h15</div>
+                            <div style="color: var(--text-light);">💃 Salsa / 🏊‍♀️ Natation</div>
+                        </div>
+                    </div>
+
+                    <!-- Jeudi -->
+                    <div class="info-card" style="border-left: 4px solid #9C27B0;">
+                        <h3 style="color: #9C27B0; text-align: center; margin-bottom: 1.5rem;">JEUDI</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <div style="font-weight: bold; color: var(--primary-color);">16h00</div>
+                            <div style="color: var(--text-light);">🇬🇧 Anglais (méthode interactive)</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: bold; color: var(--primary-color);">16h00</div>
+                            <div style="color: var(--text-light);">🏃‍♂️ Tennis, Foot, Roller, Karaté</div>
+                        </div>
+                    </div>
+
+                    <!-- Vendredi -->
+                    <div class="info-card" style="border-left: 4px solid #E91E63;">
+                        <h3 style="color: #E91E63; text-align: center; margin-bottom: 1.5rem;">VENDREDI</h3>
+                        <div>
+                            <div style="font-weight: bold; color: var(--primary-color);">16h00</div>
+                            <div style="color: var(--text-light);">🎭 Théâtre<br>(expression & créativité)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cours de Musique -->
+                <div class="info-card" style="background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%); color: white; text-align: center;">
+                    <h3 style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+                        <span>🎵</span>
+                        Cours de Musique
+                        <span>🎹</span>
+                    </h3>
+                    <p style="font-size: 1.125rem;">
+                        Guitare, Piano, Ukulélé... selon disponibilité des enseignants
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section class="section" id="programmes">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Nos Activités</h2>
+                    <p class="section__description">
+                        Un programme complet d'activités éducatives et ludiques 
+                        pour l'épanouissement de vos enfants
+                    </p>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>
+                            <span class="info-card__icon">👶</span>
+                            Qui peut participer ?
+                        </h3>
+                        <p style="font-weight: 600; margin-bottom: 1rem;">Enfants de 3 à 9 ans</p>
+                        <p><strong>Horaires :</strong></p>
+                        <ul class="activities-list">
+                            <li>Du lundi au vendredi après l'école</li>
+                            <li>Pendant toutes les vacances scolaires</li>
+                            <li>Accueil personnalisé selon les besoins</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card info-card--sports">
+                        <h3>
+                            <span class="info-card__icon">⚽</span>
+                            Activités Sportives
+                        </h3>
+                        <p style="margin-bottom: 1rem;">Dans un <strong>centre partenaire</strong> avec des équipements de qualité :</p>
+                        <ul class="activities-list">
+                            <li>Terrain de football</li>
+                            <li>Court de tennis 🎾</li>
+                            <li>Terrain de basketball 🏀</li>
+                            <li>Salle de gymnastique 🥋</li>
+                            <li>Roller et trottinette 🛼</li>
+                            <li>Encadrement par des coachs professionnels</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card info-card--language">
+                        <h3>
+                            <span class="info-card__icon">🌍</span>
+                            Apprentissage des Langues
+                        </h3>
+                        <p style="margin-bottom: 1rem;"><strong>Sessions pratiques et ludiques :</strong></p>
+                        <ul class="activities-list">
+                            <li>🇧🇯 Fongbe (langue locale)</li>
+                            <li>🇬🇧 Anglais conversationnel</li>
+                            <li>Apprentissage par le jeu et les chansons</li>
+                            <li>Méthodes favorisant la mémorisation</li>
+                            <li>Activités motivantes et interactives</li>
+                            <li>Petits groupes pour un suivi personnalisé</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card info-card--theater">
+                        <h3>
+                            <span class="info-card__icon">🎭</span>
+                            Théâtre & Expression
+                        </h3>
+                        <p style="margin-bottom: 1rem;"><strong>Développement artistique et personnel :</strong></p>
+                        <ul class="activities-list">
+                            <li>Ateliers théâtre hebdomadaires</li>
+                            <li>Plusieurs représentations dans l'année</li>
+                            <li>Expression corporelle et gestuelle</li>
+                            <li>Développement de la confiance en soi</li>
+                            <li>Travail en équipe et créativité</li>
+                            <li>Diction et art oratoire</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="partnership-card">
+                    <h3>
+                        <span>🤝</span>
+                        Nos Partenariats Enrichissants
+                    </h3>
+                    <p style="font-size: 1.125rem;">
+                        Grâce à nos différents partenariats, des <strong>passionnés</strong> 
+                        transmettent leurs savoirs et aptitudes, offrant des expériences 
+                        très <strong>enrichissantes pour les enfants</strong> 🤗
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        Chaque intervenant apporte son expertise pour un apprentissage 
+                        de qualité et diversifié.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tarifs Section -->
+        <section class="section section--alt" id="tarifs">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Tarifs</h2>
+                    <p class="section__description">
+                        Des formules flexibles adaptées à vos besoins
+                    </p>
+                </div>
+
+                <!-- Tarifs par après-midi -->
+                <div style="margin-bottom: 3rem;">
+                    <h3 style="text-align: center; font-size: 1.75rem; color: var(--primary-color); margin-bottom: 2rem;">
+                        📅 Tarif par après-midi (15h-18h)
+                    </h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                        <div class="info-card" style="border-left: 4px solid #4CAF50; text-align: center;">
+                            <h4 style="color: #4CAF50; margin-bottom: 1rem;">LUNDI ou MERCREDI</h4>
+                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--secondary-color); margin-bottom: 0.5rem;">
+                                4.000 Fcfa
+                            </div>
+                            <div style="color: var(--text-light);">1 activité</div>
+                            <div style="margin-top: 1rem; font-size: 1.25rem; font-weight: bold; color: var(--primary-color);">
+                                6.000 Fcfa
+                            </div>
+                            <div style="color: var(--text-light);">2 activités</div>
+                        </div>
+
+                        <div class="info-card" style="border-left: 4px solid #2196F3; text-align: center;">
+                            <h4 style="color: #2196F3; margin-bottom: 1rem;">MARDI (Multisport)</h4>
+                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--secondary-color);">
+                                5.000 Fcfa
+                            </div>
+                            <div style="color: var(--text-light); margin-top: 0.5rem;">
+                                Accès à tous les sports<br>
+                                <small>(Inscription annuelle: 15.000 Fcfa)</small>
+                            </div>
+                        </div>
+
+                        <div class="info-card" style="border-left: 4px solid #9C27B0; text-align: center;">
+                            <h4 style="color: #9C27B0; margin-bottom: 1rem;">JEUDI</h4>
+                            <div style="font-size: 1.25rem; font-weight: bold; color: var(--secondary-color); margin-bottom: 0.5rem;">
+                                Anglais: 4.000 Fcfa
+                            </div>
+                            <div style="font-size: 1.25rem; font-weight: bold; color: var(--secondary-color);">
+                                Multisport: 5.000 Fcfa
+                            </div>
+                        </div>
+
+                        <div class="info-card" style="border-left: 4px solid #E91E63; text-align: center;">
+                            <h4 style="color: #E91E63; margin-bottom: 1rem;">VENDREDI</h4>
+                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--secondary-color);">
+                                4.000 Fcfa
+                            </div>
+                            <div style="color: var(--text-light); margin-top: 0.5rem;">
+                                Théâtre
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services additionnels -->
+                <div style="margin-bottom: 3rem;">
+                    <h3 style="text-align: center; font-size: 1.75rem; color: var(--primary-color); margin-bottom: 2rem;">
+                        🍽️ Services Additionnels
+                    </h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div class="info-card" style="border-left: 4px solid var(--warning-color); text-align: center;">
+                            <h4 style="color: var(--warning-color); margin-bottom: 1rem;">🥪 Déjeuner</h4>
+                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--secondary-color);">
+                                2500 à 3000 Fcfa
+                            </div>
+                        </div>
+
+                        <div class="info-card" style="border-left: 4px solid var(--accent-color); text-align: center;">
+                            <h4 style="color: var(--accent-color); margin-bottom: 1rem;">🍪 Goûter</h4>
+                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--secondary-color);">
+                                800 à 1000 Fcfa
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ramassage scolaire -->
+                <div class="info-card" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); color: white; text-align: center;">
+                    <h3 style="margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                        <span>🚌</span>
+                        Ramassage Scolaire
+                    </h3>
+                    <div style="font-size: 1.25rem; margin-bottom: 1rem;">
+                        <div><strong>Haie-vive, Cocotiers:</strong> 1000 Fcfa/trajet</div>
+                        <div style="margin-top: 0.5rem;"><strong>Autres quartiers:</strong> Coût à préciser</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="contact-cta">
+            <div class="container">
+                <div class="contact-section">
+                    <h2>📞 Réservations & Informations</h2>
+                    <p style="font-size: 1.25rem; margin-bottom: 1rem;">
+                        Pour inscrire votre enfant et obtenir plus d'informations sur nos programmes
+                    </p>
+                    
+                    <a href="tel:+22964834242" class="phone-number">
+                        📱 64 83 42 42
+                    </a>
+                    
+                    <div style="margin-top: 2rem;">
+                        <a href="tel:+22964834242" class="btn btn--secondary btn--lg" style="margin: 0.5rem;">
+                            Appeler maintenant
+                        </a>
+                        <a href="https://wa.me/22964834242" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer" style="margin: 0.5rem;">
+                            WhatsApp
+                        </a>
+                    </div>
+                    
+                    <p style="margin-top: 2rem; font-size: 1.25rem;">À bientôt ! 👋</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">L'Île aux Oiseaux</h3>
+                    <p>
+                        Centre de loisirs périscolaire offrant des activités enrichissantes 
+                        dans un environnement sécurisé et stimulant.
+                    </p>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__title">Nos Services</h3>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">Garderie (2 mois - 5 ans)</a></li>
+                        <li><a href="#" class="footer__link">Périscolaire (3 - 9 ans)</a></li>
+                        <li><a href="#" class="footer__link">Activités vacances</a></li>
+                        <li><a href="#" class="footer__link">Programmes éducatifs</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__title">Contact</h3>
+                    <ul class="footer__links">
+                        <li>Zone résidentielle</li>
+                        <li>Rue de l'agence principale Moov</li>
+                        <li>Cotonou, Bénin</li>
+                        <li><a href="tel:+22964834242" class="footer__link">+229 64 83 42 42</a></li>
+                        <li><a href="mailto:ileauxoiseaux2016@gmail.com" class="footer__link">ileauxoiseaux2016@gmail.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__title">Horaires</h3>
+                    <ul class="footer__links">
+                        <li>Lundi - Vendredi</li>
+                        <li>7h30 - 18h00</li>
+                        <li></li>
+                        <li><a href="https://www.facebook.com/lileauxoiseauxcotonou/" target="_blank" rel="noopener noreferrer" class="footer__link">Suivez-nous sur Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>© 2016-2025 L'Île aux Oiseaux - Tous droits réservés</p>
+                <p>Développé par <strong>@Fritzel</strong></p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.header__mobile-toggle');
+            const nav = document.querySelector('.header__nav');
+
+            if (mobileToggle && nav) {
+                mobileToggle.addEventListener('click', function() {
+                    nav.classList.toggle('nav--open');
+                    const isOpen = nav.classList.contains('nav--open');
+                    mobileToggle.setAttribute('aria-expanded', isOpen);
+                    mobileToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu de navigation');
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!nav.contains(event.target) && !mobileToggle.contains(event.target)) {
+                    nav.classList.remove('nav--open');
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                    mobileToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
 
