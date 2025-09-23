@@ -1,485 +1,503 @@
 /**
- * Main JavaScript file for L'Île aux Oiseaux website
- * Initializes all components and handles global functionality
+ * L'ÎLE AUX OISEAUX - JavaScript Principal
+ * Version simplifiée pour GitHub Pages (sans modules ES6)
+ * Gestion du menu mobile et effets de scroll
  */
 
-import Components from './components.js';
-import Utils from './utils.js';
+(function () {
+  'use strict';
 
-const { DOM, Events, Animation, A11y } = Utils;
-const {
-  MobileNav,
-  SmoothScroll,
-  FormValidator,
-  FAQAccordion,
-  ScrollSpy,
-  LazyImages,
-} = Components;
+  // ==========================================
+  // UTILITAIRES
+  // ==========================================
 
-/**
- * Main Application Class
- */
-class App {
-  constructor() {
-    this.components = {};
-    this.cleanup = [];
-    this.init();
-  }
-
-  /**
-   * Initialize the application
-   */
-  init() {
-    Events.ready(() => {
-      this.initializeComponents();
-      this.setupGlobalEventListeners();
-      this.setupAccessibilityFeatures();
-      this.setupThemeToggle();
-      this.announcePageLoad();
-    });
-  }
-
-  /**
-   * Initialize all components
-   */
-  initializeComponents() {
-    // Mobile Navigation
-    this.components.mobileNav = new MobileNav('.header__nav');
-
-    // Smooth Scroll Navigation
-    this.components.smoothScroll = new SmoothScroll('a[href^="#"]');
-
-    // Form Validation (if contact form exists)
-    const contactForm = DOM.query('#contact-form');
-    if (contactForm) {
-      this.components.formValidator = new FormValidator('#contact-form');
-    }
-
-    // FAQ Accordion (if FAQ page)
-    const faqContainer = DOM.query('.faq');
-    if (faqContainer) {
-      this.components.faqAccordion = new FAQAccordion('.faq');
-    }
-
-    // Scroll Spy for navigation
-    this.components.scrollSpy = new ScrollSpy('.header__nav', 'section[id]');
-
-    // Lazy loading for images
-    this.components.lazyImages = new LazyImages('img[data-src]');
-  }
-
-  /**
-   * Setup global event listeners
-   */
-  setupGlobalEventListeners() {
-    // Handle external links
-    this.setupExternalLinks();
-
-    // Handle WhatsApp and phone links
-    this.setupContactLinks();
-
-    // Keyboard navigation improvements
-    this.setupKeyboardNavigation();
-
-    // Handle print requests
-    this.setupPrintHandling();
-  }
-
-  /**
-   * Setup external links with proper attributes
-   */
-  setupExternalLinks() {
-    const externalLinks = DOM.queryAll(
-      'a[href^="http"]:not([href*="' + window.location.hostname + '"])'
-    );
-
-    externalLinks.forEach(link => {
-      link.setAttribute('target', '_blank');
-      link.setAttribute('rel', 'noopener noreferrer');
-
-      // Add screen reader text for external links
-      if (!link.querySelector('.sr-only')) {
-        const srText = DOM.create(
-          'span',
-          { className: 'sr-only' },
-          ' (ouvre dans un nouvel onglet)'
-        );
-        link.appendChild(srText);
+  const Utils = {
+    // Sélecteur d'élément
+    query: function (selector, context = document) {
+      try {
+        return context.querySelector(selector);
+      } catch (error) {
+        console.warn('Sélecteur invalide:', selector);
+        return null;
       }
-    });
-  }
+    },
 
-  /**
-   * Setup contact links (WhatsApp, phone, email)
-   */
-  setupContactLinks() {
-    // WhatsApp links
-    const whatsappLinks = DOM.queryAll('a[href^="https://wa.me"]');
-    whatsappLinks.forEach(link => {
-      this.cleanup.push(
-        Events.on(link, 'click', e => {
-          // Analytics tracking could go here
-          console.log('WhatsApp link clicked');
-        })
-      );
-    });
+    // Sélecteur multiple
+    queryAll: function (selector, context = document) {
+      try {
+        return Array.from(context.querySelectorAll(selector));
+      } catch (error) {
+        console.warn('Sélecteur invalide:', selector);
+        return [];
+      }
+    },
 
-    // Phone links
-    const phoneLinks = DOM.queryAll('a[href^="tel:"]');
-    phoneLinks.forEach(link => {
-      this.cleanup.push(
-        Events.on(link, 'click', e => {
-          // Analytics tracking could go here
-          console.log('Phone link clicked');
-        })
-      );
-    });
+    // Debounce
+    debounce: function (func, wait) {
+      let timeout;
+      return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+      };
+    },
 
-    // Email links
-    const emailLinks = DOM.queryAll('a[href^="mailto:"]');
-    emailLinks.forEach(link => {
-      this.cleanup.push(
-        Events.on(link, 'click', e => {
-          // Analytics tracking could go here
-          console.log('Email link clicked');
-        })
-      );
-    });
-  }
-
-  /**
-   * Setup keyboard navigation improvements
-   */
-  setupKeyboardNavigation() {
-    // Focus visible on all interactive elements
-    const interactiveElements = DOM.queryAll(
-      'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    );
-
-    interactiveElements.forEach(element => {
-      this.cleanup.push(
-        Events.on(element, 'focus', () => {
-          element.classList.add('focus-visible');
-        }),
-        Events.on(element, 'blur', () => {
-          element.classList.remove('focus-visible');
-        })
-      );
-    });
-
-    // Skip to main content functionality
-    const skipLink = DOM.query('.skip-link');
-    const mainContent = DOM.query('#main-content');
-
-    if (skipLink && mainContent) {
-      this.cleanup.push(
-        Events.on(skipLink, 'click', e => {
-          e.preventDefault();
-          mainContent.focus();
-          Animation.scrollTo(mainContent);
-        })
-      );
-    }
-  }
-
-  /**
-   * Setup accessibility features
-   */
-  setupAccessibilityFeatures() {
-    // Announce route changes for SPA-like navigation
-    this.setupRouteAnnouncements();
-
-    // Handle focus management
-    this.setupFocusManagement();
-
-    // Setup reduced motion preferences
-    this.setupReducedMotionPreferences();
-  }
-
-  /**
-   * Setup route change announcements
-   */
-  setupRouteAnnouncements() {
-    // Listen for hash changes
-    this.cleanup.push(
-      Events.on(window, 'hashchange', () => {
-        const hash = window.location.hash.substring(1);
-        const section = DOM.query(`#${hash}`);
-
-        if (section) {
-          const sectionTitle = DOM.query('h1, h2, h3', section);
-          const title = sectionTitle ? sectionTitle.textContent : 'Section';
-          A11y.announce(`Navigation vers ${title}`, 'polite');
+    // Throttle
+    throttle: function (func, limit) {
+      let inThrottle;
+      return function (...args) {
+        if (!inThrottle) {
+          func.apply(this, args);
+          inThrottle = true;
+          setTimeout(() => (inThrottle = false), limit);
         }
-      })
-    );
-  }
+      };
+    },
 
-  /**
-   * Setup focus management
-   */
-  setupFocusManagement() {
-    // Ensure focus is visible when navigating with keyboard
-    this.cleanup.push(
-      Events.on(document, 'keydown', e => {
+    // Vérifier si on préfère les animations réduites
+    prefersReducedMotion: function () {
+      return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    },
+  };
+
+  // ==========================================
+  // GESTION DU HEADER FIXE
+  // ==========================================
+
+  const HeaderManager = {
+    init: function () {
+      this.header = Utils.query('.header');
+      this.lastScrollTop = 0;
+
+      if (!this.header) return;
+
+      // Throttle le scroll pour de meilleures performances
+      const throttledScrollHandler = Utils.throttle(
+        this.handleScroll.bind(this),
+        16
+      );
+      window.addEventListener('scroll', throttledScrollHandler, {
+        passive: true,
+      });
+
+      // État initial
+      this.handleScroll();
+    },
+
+    handleScroll: function () {
+      const currentScrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      // Ajouter/enlever la classe scrolled
+      if (currentScrollTop > 20) {
+        this.header.classList.add('scrolled');
+      } else {
+        this.header.classList.remove('scrolled');
+      }
+
+      this.lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+    },
+  };
+
+  // ==========================================
+  // NAVIGATION MOBILE
+  // ==========================================
+
+  const MobileNav = {
+    init: function () {
+      this.nav = Utils.query('.header__nav');
+      this.toggle = Utils.query('.header__mobile-toggle');
+      this.isOpen = false;
+      this.navLinks = Utils.queryAll('.nav__link');
+
+      if (!this.nav || !this.toggle) return;
+
+      this.setupEventListeners();
+      this.setupAriaAttributes();
+    },
+
+    setupEventListeners: function () {
+      // Toggle button
+      this.toggle.addEventListener('click', () => this.toggleNav());
+
+      // Liens de navigation
+      this.navLinks.forEach(link => {
+        link.addEventListener('click', e => this.handleLinkClick(e, link));
+      });
+
+      // Fermer avec Escape
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && this.isOpen) {
+          this.closeNav();
+        }
+      });
+
+      // Fermer en cliquant à l'extérieur
+      document.addEventListener('click', e => {
+        if (
+          this.isOpen &&
+          !this.nav.contains(e.target) &&
+          !this.toggle.contains(e.target)
+        ) {
+          this.closeNav();
+        }
+      });
+
+      // Fermer lors du redimensionnement
+      const debouncedResize = Utils.debounce(() => {
+        if (window.innerWidth >= 768 && this.isOpen) {
+          this.closeNav();
+        }
+      }, 250);
+      window.addEventListener('resize', debouncedResize);
+    },
+
+    setupAriaAttributes: function () {
+      this.toggle.setAttribute('aria-expanded', 'false');
+      this.toggle.setAttribute('aria-controls', 'main-navigation');
+      this.nav.id = 'main-navigation';
+    },
+
+    toggleNav: function () {
+      if (this.isOpen) {
+        this.closeNav();
+      } else {
+        this.openNav();
+      }
+    },
+
+    openNav: function () {
+      this.isOpen = true;
+      this.nav.classList.add('header__nav--open');
+      this.toggle.setAttribute('aria-expanded', 'true');
+      this.toggle.innerHTML = '✕';
+
+      // Focus sur le premier lien
+      const firstLink = this.navLinks[0];
+      if (firstLink) {
+        setTimeout(() => firstLink.focus(), 100);
+      }
+
+      console.log('Menu mobile ouvert');
+    },
+
+    closeNav: function () {
+      this.isOpen = false;
+      this.nav.classList.remove('header__nav--open');
+      this.toggle.setAttribute('aria-expanded', 'false');
+      this.toggle.innerHTML = '☰';
+
+      console.log('Menu mobile fermé');
+    },
+
+    handleLinkClick: function (e, link) {
+      // Fermer le menu mobile
+      if (this.isOpen) {
+        this.closeNav();
+      }
+
+      // Smooth scroll pour les liens internes
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#') && href.length > 1) {
+        e.preventDefault();
+        SmoothScroll.scrollToSection(href.substring(1));
+      }
+    },
+  };
+
+  // ==========================================
+  // SMOOTH SCROLL
+  // ==========================================
+
+  const SmoothScroll = {
+    init: function () {
+      const links = Utils.queryAll('a[href^="#"]');
+
+      links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.length > 1) {
+          link.addEventListener('click', e => {
+            e.preventDefault();
+            this.scrollToSection(href.substring(1));
+          });
+        }
+      });
+    },
+
+    scrollToSection: function (sectionId) {
+      const target = Utils.query(`#${sectionId}`);
+      if (!target) return;
+
+      const headerHeight = 96; // Hauteur du header fixe
+      const targetPosition = target.offsetTop - headerHeight;
+
+      // Utiliser scrollTo natif avec smooth behavior
+      window.scrollTo({
+        top: targetPosition,
+        behavior: Utils.prefersReducedMotion() ? 'auto' : 'smooth',
+      });
+
+      // Mise à jour de l'URL
+      if (history.pushState) {
+        history.pushState(null, null, `#${sectionId}`);
+      }
+
+      // Focus pour l'accessibilité
+      target.setAttribute('tabindex', '-1');
+      target.focus();
+      target.addEventListener(
+        'blur',
+        () => {
+          target.removeAttribute('tabindex');
+        },
+        { once: true }
+      );
+    },
+  };
+
+  // ==========================================
+  // ANIMATIONS AU SCROLL
+  // ==========================================
+
+  const ScrollAnimations = {
+    init: function () {
+      if (!('IntersectionObserver' in window)) {
+        console.log('Intersection Observer non supporté');
+        return;
+      }
+
+      this.setupIntersectionObserver();
+    },
+
+    setupIntersectionObserver: function () {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      };
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const element = entry.target;
+            element.classList.add('animate-in');
+            observer.unobserve(element);
+          }
+        });
+      }, observerOptions);
+
+      // Observer les éléments avec animations
+      const animatedElements = Utils.queryAll(
+        '.excellence-item, .day-card, .timeline-item, .program-card'
+      );
+      animatedElements.forEach(element => {
+        observer.observe(element);
+      });
+    },
+  };
+
+  // ==========================================
+  // LAZY LOADING DES IMAGES
+  // ==========================================
+
+  const LazyImages = {
+    init: function () {
+      const images = Utils.queryAll('img[loading="lazy"]');
+
+      // Si le navigateur supporte le lazy loading natif
+      if ('loading' in HTMLImageElement.prototype) {
+        return;
+      }
+
+      // Fallback avec Intersection Observer
+      if ('IntersectionObserver' in window) {
+        this.setupIntersectionObserver(images);
+      } else {
+        // Fallback ultime : charger toutes les images
+        images.forEach(img => this.loadImage(img));
+      }
+    },
+
+    setupIntersectionObserver: function (images) {
+      const imageObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.loadImage(entry.target);
+            imageObserver.unobserve(entry.target);
+          }
+        });
+      });
+
+      images.forEach(img => imageObserver.observe(img));
+    },
+
+    loadImage: function (img) {
+      if (img.dataset.src) {
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+      }
+      img.classList.add('loaded');
+    },
+  };
+
+  // ==========================================
+  // ACCESSIBILITÉ
+  // ==========================================
+
+  const Accessibility = {
+    init: function () {
+      this.setupSkipLinks();
+      this.setupFocusVisible();
+      this.setupKeyboardNavigation();
+    },
+
+    setupSkipLinks: function () {
+      const skipLink = Utils.query('.skip-link');
+      const mainContent = Utils.query('#main-content');
+
+      if (skipLink && mainContent) {
+        skipLink.addEventListener('click', e => {
+          e.preventDefault();
+          mainContent.setAttribute('tabindex', '-1');
+          mainContent.focus();
+          mainContent.addEventListener(
+            'blur',
+            () => {
+              mainContent.removeAttribute('tabindex');
+            },
+            { once: true }
+          );
+        });
+      }
+    },
+
+    setupFocusVisible: function () {
+      // Ajouter focus-visible pour la navigation au clavier
+      document.addEventListener('keydown', e => {
         if (e.key === 'Tab') {
           document.body.classList.add('keyboard-navigation');
         }
-      }),
-      Events.on(document, 'mousedown', () => {
+      });
+
+      document.addEventListener('mousedown', () => {
         document.body.classList.remove('keyboard-navigation');
-      })
-    );
-  }
+      });
+    },
 
-  /**
-   * Setup reduced motion preferences
-   */
-  setupReducedMotionPreferences() {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-    const handleReducedMotion = e => {
-      if (e.matches) {
-        document.body.classList.add('reduce-motion');
-      } else {
-        document.body.classList.remove('reduce-motion');
-      }
-    };
-
-    // Initial check
-    handleReducedMotion(mediaQuery);
-
-    // Listen for changes
-    if (mediaQuery.addEventListener) {
-      mediaQuery.addEventListener('change', handleReducedMotion);
-    } else {
-      // Fallback for older browsers
-      mediaQuery.addListener(handleReducedMotion);
-    }
-  }
-
-  /**
-   * Setup theme toggle functionality
-   */
-  setupThemeToggle() {
-    const themeToggle = DOM.query('.theme-toggle');
-
-    if (themeToggle) {
-      // Load saved theme
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        this.updateThemeToggle(themeToggle, savedTheme);
-      }
-
-      // Theme toggle click handler
-      this.cleanup.push(
-        Events.on(themeToggle, 'click', () => {
-          const currentTheme =
-            document.documentElement.getAttribute('data-theme');
-          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-          document.documentElement.setAttribute('data-theme', newTheme);
-          localStorage.setItem('theme', newTheme);
-          this.updateThemeToggle(themeToggle, newTheme);
-
-          A11y.announce(
-            `Thème ${newTheme === 'dark' ? 'sombre' : 'clair'} activé`,
-            'polite'
-          );
-        })
+    setupKeyboardNavigation: function () {
+      // Améliorer la navigation au clavier
+      const interactiveElements = Utils.queryAll(
+        'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
       );
-    }
-  }
 
-  /**
-   * Update theme toggle button
-   */
-  updateThemeToggle(button, theme) {
-    const isDark = theme === 'dark';
-    button.textContent = isDark ? '☀️' : '🌙';
-    button.setAttribute(
-      'aria-label',
-      `Basculer vers le thème ${isDark ? 'clair' : 'sombre'}`
-    );
-  }
-
-  /**
-   * Setup print handling
-   */
-  setupPrintHandling() {
-    this.cleanup.push(
-      Events.on(window, 'beforeprint', () => {
-        // Expand all collapsed content for printing
-        const expandableElements = DOM.queryAll('[aria-expanded="false"]');
-        expandableElements.forEach(element => {
-          element.setAttribute('data-was-collapsed', 'true');
-          element.setAttribute('aria-expanded', 'true');
+      interactiveElements.forEach(element => {
+        element.addEventListener('focus', () => {
+          element.classList.add('focus-visible');
         });
-      }),
-      Events.on(window, 'afterprint', () => {
-        // Restore collapsed state after printing
-        const expandedElements = DOM.queryAll('[data-was-collapsed="true"]');
-        expandedElements.forEach(element => {
-          element.setAttribute('aria-expanded', 'false');
-          element.removeAttribute('data-was-collapsed');
+
+        element.addEventListener('blur', () => {
+          element.classList.remove('focus-visible');
         });
-      })
-    );
-  }
+      });
+    },
+  };
 
-  /**
-   * Announce page load to screen readers
-   */
-  announcePageLoad() {
-    const pageTitle = document.title;
-    A11y.announce(`Page ${pageTitle} chargée`, 'polite');
-  }
+  // ==========================================
+  // GESTION DES LIENS EXTERNES
+  // ==========================================
 
-  /**
-   * Cleanup all event listeners and components
-   */
-  destroy() {
-    // Cleanup global event listeners
-    this.cleanup.forEach(fn => fn());
-    this.cleanup = [];
+  const ExternalLinks = {
+    init: function () {
+      const externalLinks = Utils.queryAll(
+        'a[href^="http"]:not([href*="' + window.location.hostname + '"])'
+      );
 
-    // Destroy all components
-    Object.values(this.components).forEach(component => {
-      if (component && typeof component.destroy === 'function') {
-        component.destroy();
-      }
-    });
+      externalLinks.forEach(link => {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
 
-    this.components = {};
-  }
-}
-
-/**
- * Performance monitoring
- */
-class PerformanceMonitor {
-  constructor() {
-    this.init();
-  }
-
-  init() {
-    // Monitor Core Web Vitals if supported
-    if ('PerformanceObserver' in window) {
-      this.observeWebVitals();
-    }
-
-    // Monitor resource loading
-    this.observeResourceLoading();
-  }
-
-  observeWebVitals() {
-    // Largest Contentful Paint (LCP)
-    new PerformanceObserver(list => {
-      for (const entry of list.getEntries()) {
-        console.log('LCP:', entry.startTime);
-      }
-    }).observe({ entryTypes: ['largest-contentful-paint'] });
-
-    // First Input Delay (FID)
-    new PerformanceObserver(list => {
-      for (const entry of list.getEntries()) {
-        console.log('FID:', entry.processingStart - entry.startTime);
-      }
-    }).observe({ entryTypes: ['first-input'] });
-
-    // Cumulative Layout Shift (CLS)
-    new PerformanceObserver(list => {
-      for (const entry of list.getEntries()) {
-        if (!entry.hadRecentInput) {
-          console.log('CLS:', entry.value);
+        // Ajouter du texte pour les lecteurs d'écran
+        if (!link.querySelector('.sr-only')) {
+          const srText = document.createElement('span');
+          srText.className = 'sr-only';
+          srText.textContent = ' (ouvre dans un nouvel onglet)';
+          link.appendChild(srText);
         }
-      }
-    }).observe({ entryTypes: ['layout-shift'] });
+      });
+    },
+  };
+
+  // ==========================================
+  // GESTION DES ERREURS
+  // ==========================================
+
+  const ErrorHandler = {
+    init: function () {
+      window.addEventListener('error', event => {
+        console.error('Erreur JavaScript:', event.error);
+        this.reportError(event.error);
+      });
+
+      window.addEventListener('unhandledrejection', event => {
+        console.error('Promise rejetée:', event.reason);
+        this.reportError(event.reason);
+      });
+    },
+
+    reportError: function (error) {
+      // En production, vous pourriez envoyer ces erreurs à un service de monitoring
+      console.log('Erreur rapportée:', {
+        message: error.message,
+        stack: error.stack,
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        timestamp: new Date().toISOString(),
+      });
+    },
+  };
+
+  // ==========================================
+  // INITIALISATION PRINCIPALE
+  // ==========================================
+
+  const App = {
+    init: function () {
+      console.log("Initialisation de L'Île aux Oiseaux...");
+
+      // Initialiser tous les modules
+      HeaderManager.init();
+      MobileNav.init();
+      SmoothScroll.init();
+      ScrollAnimations.init();
+      LazyImages.init();
+      Accessibility.init();
+      ExternalLinks.init();
+      ErrorHandler.init();
+
+      console.log("L'Île aux Oiseaux initialisée avec succès!");
+    },
+  };
+
+  // ==========================================
+  // DÉMARRAGE DE L'APPLICATION
+  // ==========================================
+
+  // Initialiser quand le DOM est prêt
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', App.init);
+  } else {
+    App.init();
   }
 
-  observeResourceLoading() {
-    this.cleanup.push(
-      Events.on(window, 'load', () => {
-        const navigation = performance.getEntriesByType('navigation')[0];
-        if (navigation) {
-          console.log(
-            'Page load time:',
-            navigation.loadEventEnd - navigation.loadEventStart
-          );
-          console.log(
-            'DOM content loaded:',
-            navigation.domContentLoadedEventEnd -
-              navigation.domContentLoadedEventStart
-          );
-        }
-      })
-    );
+  // Exposer certaines fonctions pour le debugging
+  if (
+    window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1'
+  ) {
+    window.IleAuxOiseaux = {
+      App,
+      HeaderManager,
+      MobileNav,
+      SmoothScroll,
+      Utils,
+    };
   }
-}
-
-/**
- * Error handling
- */
-class ErrorHandler {
-  constructor() {
-    this.init();
-  }
-
-  init() {
-    // Global error handler
-    window.addEventListener('error', event => {
-      console.error('Global error:', event.error);
-      this.reportError(event.error);
-    });
-
-    // Promise rejection handler
-    window.addEventListener('unhandledrejection', event => {
-      console.error('Unhandled promise rejection:', event.reason);
-      this.reportError(event.reason);
-    });
-  }
-
-  reportError(error) {
-    // In a real application, you would send this to an error reporting service
-    console.log('Error reported:', {
-      message: error.message,
-      stack: error.stack,
-      url: window.location.href,
-      userAgent: navigator.userAgent,
-      timestamp: new Date().toISOString(),
-    });
-  }
-}
-
-// Initialize application
-let app;
-let performanceMonitor;
-let errorHandler;
-
-// Wait for DOM to be ready
-Events.ready(() => {
-  try {
-    app = new App();
-    performanceMonitor = new PerformanceMonitor();
-    errorHandler = new ErrorHandler();
-  } catch (error) {
-    console.error('Failed to initialize application:', error);
-  }
-});
-
-// Cleanup on page unload
-Events.on(window, 'beforeunload', () => {
-  if (app && typeof app.destroy === 'function') {
-    app.destroy();
-  }
-});
-
-// Export for potential external use
-window.IleAuxOiseauxApp = {
-  app,
-  performanceMonitor,
-  errorHandler,
-  Utils,
-  Components,
-};
+})();
