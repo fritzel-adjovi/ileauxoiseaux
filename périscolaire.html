@@ -3,356 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Périscolaire - L'Île aux Oiseaux | Activités après l'école</title>
-    <meta name="description" content="Centre de loisirs périscolaire L'Île aux Oiseaux à Cotonou. Programme d'activités pour enfants de 3 à 9 ans après l'école et pendant les vacances.">
+    <title>Activités Périscolaires</title>
     
-    <!-- Stylesheets -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="canonical" href="https://votre-domaine.com/galerie.html" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="stylesheet" href="assets/css/periscolaire.css" />
 </head>
-
 <body>
     <!-- Header -->
-    <header class="header" role="banner">
+    <header class="header">
         <div class="container">
             <div class="header__container">
-                <a href="index.html" class="header__logo" aria-label="L'Île aux Oiseaux - Retour à l'accueil">
-                    <span class="header__logo-icon" aria-hidden="true">🦜</span>
-                    <span>L'Île aux Oiseaux</span>
+                <a href="#" class="header__logo">
+                    <span class="header__logo-icon">🎯</span>
+                    Activités Périscolaires
                 </a>
-
-                <button class="header__mobile-toggle" aria-expanded="false" aria-controls="main-navigation" aria-label="Ouvrir le menu de navigation">
-                    <span aria-hidden="true">☰</span>
-                </button>
-
-                <nav class="header__nav" id="main-navigation" role="navigation" aria-label="Navigation principale">
+                <nav class="header__nav">
                     <ul class="nav">
-                        <li class="nav__item">
-                            <a href="index.html" class="nav__link">Garderie</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="periscolaire.html" class="nav__link nav__link--active" aria-current="page">Périscolaire</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="tarifs.html" class="nav__link">Tarifs</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="equipe.html" class="nav__link">Équipe</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="contact.html" class="nav__link">Contact</a>
-                        </li>
+                        <li class="nav__item"><a href="#accueil" class="nav__link nav__link--active">Accueil</a></li>
+                        <li class="nav__item"><a href="#activites" class="nav__link">Activités</a></li>
+                        <li class="nav__item"><a href="#inscriptions" class="nav__link">Inscriptions</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                     </ul>
                 </nav>
+                <button class="header__mobile-toggle">☰</button>
             </div>
         </div>
     </header>
 
-    <!-- Main content -->
-    <main role="main">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <h1 class="hero__title">🏝️ Centre de Loisirs Périscolaire</h1>
-                <p class="hero__subtitle">
-                    Un programme enrichissant pour vos enfants de 3 à 9 ans, 
-                    après l'école et pendant les vacances
-                </p>
-                <div class="hero__actions">
-                    <a href="#contact-cta" class="btn btn--secondary btn--lg">
-                        Réserver une place
-                    </a>
-                    <a href="#planning" class="btn btn--primary btn--lg">
-                        Voir le planning
-                    </a>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero__title">Découvrez nos Activités Périscolaires</h1>
+            <p class="hero__subtitle">
+                Des activités variées et enrichissantes pour l'épanouissement de vos enfants 
+                après les heures de classe
+            </p>
+            <div class="hero__actions">
+                <a href="#activites" class="btn btn--secondary btn--lg">Voir les Activités</a>
+                <a href="#contact" class="btn btn--primary btn--lg">Nous Contacter</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        
-        
-
-        <!-- Horaires Section -->
-        <section class="section">
+    <!-- Main Content -->
+    <main>
+        <section class="section" id="accueil">
             <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Horaires d'Accueil</h2>
-                    <p class="section__description">
-                        Accueille vos enfants de 3 à 9 ans, en périscolaire
-                    </p>
-                </div>
 
-                <div class="horaires-grid">
-                    <div class="info-card horaires-card">
-                        <h3 class="horaires-card__title">📅 Lundi - Vendredi</h3>
-                        <div class="horaires-card__time">
-                            <div>15h - 18h</div>
-                            <div class="horaires-card__or">ou</div>
-                            <div>11h30 - 18h</div>
-                        </div>
-                        <p class="horaires-card__note">
-                            Selon les besoins de votre famille
-                        </p>
-                    </div>
 
-                    <div class="info-card horaires-card horaires-card--vacances">
-                        <h3 class="horaires-card__title">🏖️ Vacances Scolaires</h3>
-                        <div class="horaires-card__time">
-                            <div>Journées complètes</div>
-                        </div>
-                        <p class="horaires-card__note">
-                            Programme d'activités enrichi pendant les congés
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Planning Section -->
-        <section class="section section--alt" id="planning">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Planning Hebdomadaire</h2>
-                    <p class="section__description">
-                        Un programme varié et équilibré pour chaque jour de la semaine
-                    </p>
-                </div>
-
-                <div class="planning-grid">
-                    <!-- Lundi -->
-                    <div class="info-card planning-card planning-card--lundi">
-                        <h3 class="planning-card__day">LUNDI</h3>
-                        <div class="planning-card__activity">
-                            <div class="planning-card__time">15h45</div>
-                            <div class="planning-card__desc">🏺 Poterie/Modelage d'argile</div>
-                        </div>
-                        <div class="planning-card__activity">
-                            <div class="planning-card__time">16h45</div>
-                            <div class="planning-card__desc">🇧🇯 Fongbe (apprentissage ludique)</div>
-                        </div>
-                    </div>
-
-                    <!-- Mardi -->
-                    <div class="info-card planning-card planning-card--mardi">
-                        <h3 class="planning-card__day">MARDI</h3>
-                        <div class="planning-card__activity">
-                            <div class="planning-card__time">16h00</div>
-                            <div class="planning-card__desc">
-                                ⚽ Multisports :<br>
-                                • Football & Roller<br>
-                                • Karaté & Basket<br>
-                                • Tennis
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Mercredi -->
-                    <div class="info-card planning-card planning-card--mercredi">
-                        <h3 class="planning-card__day">MERCREDI</h3>
-                        <div class="planning-card__activity">
-                            <div class="planning-card__time">15h00</div>
-                            <div class="planning-card__desc">🍳 Cuisine/Jardinage</div>
-                        </div>
-                        <div class="planning-card__activity">
-                            <div class="planning-card__time">16h15</div>
-                            <div class="planning-card__desc">💃 Salsa / 🏊‍♀️ Natation</div>
-                        </div>
-                    </div>
-
-                    <!-- Jeudi -->
-                    <div class="info-card planning-card planning-card--jeudi">
-                        <h3 class="planning-card__day">JEUDI</h3>
-                        <div class="planning-card__activity">
-                            <div class="planning-card__time">16h00</div>
-                            <div class="planning-card__desc">🇬🇧 Anglais (méthode interactive)</div>
-                        </div>
-                        <div class="planning-card__activity">
-                            <div class="planning-card__time">16h00</div>
-                            <div class="planning-card__desc">🏃‍♂️ Tennis, Foot, Roller, Karaté</div>
-                        </div>
-                    </div>
-
-                    <!-- Vendredi -->
-                    <div class="info-card planning-card planning-card--vendredi">
-                        <h3 class="planning-card__day">VENDREDI</h3>
-                        <div class="planning-card__activity">
-                            <div class="planning-card__time">16h00</div>
-                            <div class="planning-card__desc">🎭 Théâtre<br>(expression & créativité)</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cours de Musique -->
-                <div class="info-card musique-card">
-                    <h3 class="musique-card__title">
-                        <span>🎵</span>
-                        Cours de Musique
-                        <span>🎹</span>
-                    </h3>
-                    <p class="musique-card__desc">
-                        Guitare, Piano, Ukulélé... selon disponibilité des enseignants
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Programs Section -->
-        <section class="section" id="programmes">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Nos Activités</h2>
-                    <p class="section__description">
-                        Un programme complet d'activités éducatives et ludiques 
-                        pour l'épanouissement de vos enfants
-                    </p>
-                </div>
-
+                <!-- Grille d'informations 2x2 avec le style programme éducatif -->
                 <div class="info-grid">
-                    <div class="info-card">
-                        <h3>
-                            <span class="info-card__icon">👶</span>
-                            Qui peut participer ?
-                        </h3>
-                        <p class="info-card__highlight">Enfants de 3 à 9 ans</p>
-                        <p><strong>Horaires :</strong></p>
-                        <ul class="activities-list">
-                            <li>Du lundi au vendredi après l'école</li>
-                            <li>Pendant toutes les vacances scolaires</li>
-                            <li>Accueil personnalisé selon les besoins</li>
-                        </ul>
-                    </div>
+                    <!-- Première ligne -->
+                    <article class="info-card">
+                        <header class="program-card__header">
+                            <span class="program-card__age">CP - CM2</span>
+                            <h3 class="program-card__title">
+                                <span class="info-card__icon">👥</span>
+                                Qui peut participer ?
+                            </h3>
+                            <p class="program-card__summary">
+                                Conditions d'inscription et organisation des groupes
+                            </p>
+                        </header>
+                        <div class="program-card__body">
+                            <p class="program-card__description">
+                                Nos activités périscolaires sont ouvertes à tous les élèves du primaire avec une organisation adaptée à chaque tranche d'âge.
+                            </p>
+                            <ul class="program-card__features">
+                                <li class="program-card__feature">Élèves de CP au CM2</li>
+                                <li class="program-card__feature">Inscription nécessaire</li>
+                                <li class="program-card__feature">Groupes de 8 à 15 enfants maximum</li>
+                                <li class="program-card__feature">Tous niveaux acceptés</li>
+                            </ul>
+                        </div>
+                    </article>
 
-                    <div class="info-card info-card--sports">
-                        <h3>
-                            <span class="info-card__icon">⚽</span>
-                            Activités Sportives
-                        </h3>
-                        <p class="info-card__intro">Dans un <strong>centre partenaire</strong> avec des équipements de qualité :</p>
-                        <ul class="activities-list">
-                            <li>Terrain de football</li>
-                            <li>Court de tennis 🎾</li>
-                            <li>Terrain de basketball 🏀</li>
-                            <li>Salle de gymnastique 🥋</li>
-                            <li>Roller et trottinette 🛼</li>
-                            <li>Encadrement par des coachs professionnels</li>
-                        </ul>
-                    </div>
+                    <article class="info-card info-card--sports">
+                        <header class="program-card__header">
+                            <span class="program-card__age">Sport & Forme</span>
+                            <h3 class="program-card__title">
+                                <span class="info-card__icon">⚽</span>
+                                Activités Sportives
+                            </h3>
+                            <p class="program-card__summary">
+                                Développement physique et esprit d'équipe
+                            </p>
+                        </header>
+                        <div class="program-card__body">
+                            <p class="program-card__description">
+                                Des activités variées pour développer les capacités motrices et favoriser l'esprit d'équipe dans un environnement ludique et sécurisé.
+                            </p>
+                            <ul class="program-card__features">
+                                <li class="program-card__feature">Football et sports collectifs</li>
+                                <li class="program-card__feature">Badminton et tennis de table</li>
+                                <li class="program-card__feature">Course et athlétisme</li>
+                                <li class="program-card__feature">Yoga et relaxation</li>
+                            </ul>
+                        </div>
+                    </article>
 
-                    <div class="info-card info-card--language">
-                        <h3>
-                            <span class="info-card__icon">🌍</span>
-                            Apprentissage des Langues
-                        </h3>
-                        <p class="info-card__intro"><strong>Sessions pratiques et ludiques :</strong></p>
-                        <ul class="activities-list">
-                            <li>🇧🇯 Fongbe (langue locale)</li>
-                            <li>🇬🇧 Anglais conversationnel</li>
-                            <li>Apprentissage par le jeu et les chansons</li>
-                            <li>Méthodes favorisant la mémorisation</li>
-                            <li>Activités motivantes et interactives</li>
-                            <li>Petits groupes pour un suivi personnalisé</li>
-                        </ul>
-                    </div>
+                    <!-- Deuxième ligne -->
+                    <article class="info-card info-card--language">
+                        <header class="program-card__header">
+                            <span class="program-card__age">Culture & Monde</span>
+                            <h3 class="program-card__title">
+                                <span class="info-card__icon">🌍</span>
+                                Langues & Culture
+                            </h3>
+                            <p class="program-card__summary">
+                                Ouverture sur le monde et découverte culturelle
+                            </p>
+                        </header>
+                        <div class="program-card__body">
+                            <p class="program-card__description">
+                                Initiation aux langues étrangères et découverte des cultures du monde à travers des activités ludiques et interactives.
+                            </p>
+                            <ul class="program-card__features">
+                                <li class="program-card__feature">Anglais ludique</li>
+                                <li class="program-card__feature">Découverte culturelle</li>
+                                <li class="program-card__feature">Jeux de société internationaux</li>
+                                <li class="program-card__feature">Chants et comptines</li>
+                            </ul>
+                        </div>
+                    </article>
 
-                    <div class="info-card info-card--theater">
-                        <h3>
-                            <span class="info-card__icon">🎭</span>
-                            Théâtre & Expression
-                        </h3>
-                        <p class="info-card__intro"><strong>Développement artistique et personnel :</strong></p>
-                        <ul class="activities-list">
-                            <li>Ateliers théâtre hebdomadaires</li>
-                            <li>Plusieurs représentations dans l'année</li>
-                            <li>Expression corporelle et gestuelle</li>
-                            <li>Développement de la confiance en soi</li>
-                            <li>Travail en équipe et créativité</li>
-                            <li>Diction et art oratoire</li>
-                        </ul>
-                    </div>
+                    <article class="info-card info-card--theater">
+                        <header class="program-card__header">
+                            <span class="program-card__age">Art & Expression</span>
+                            <h3 class="program-card__title">
+                                <span class="info-card__icon">🎭</span>
+                                Arts & Créativité
+                            </h3>
+                            <p class="program-card__summary">
+                                Expression artistique et développement créatif
+                            </p>
+                        </header>
+                        <div class="program-card__body">
+                            <p class="program-card__description">
+                                Ateliers créatifs pour stimuler l'imagination et développer les talents artistiques de chaque enfant dans une ambiance bienveillante.
+                            </p>
+                            <ul class="program-card__features">
+                                <li class="program-card__feature">Théâtre et expression</li>
+                                <li class="program-card__feature">Arts plastiques</li>
+                                <li class="program-card__feature">Musique et chant</li>
+                                <li class="program-card__feature">Bricolage créatif</li>
+                            </ul>
+                        </div>
+                    </article>
                 </div>
 
+                <!-- Partenariat -->
                 <div class="partnership-card">
                     <h3>
                         <span>🤝</span>
-                        Nos Partenariats Enrichissants
+                        En partenariat avec l'École de Musique
                     </h3>
-                    <p class="partnership-card__desc">
-                        Grâce à nos différents partenariats, des <strong>passionnés</strong> 
-                        transmettent leurs savoirs et aptitudes, offrant des expériences 
-                        très <strong>enrichissantes pour les enfants</strong> 🤗
-                    </p>
-                    <p class="partnership-card__note">
-                        Chaque intervenant apporte son expertise pour un apprentissage 
-                        de qualité et diversifié.
+                    <p>
+                        Nous collaborons avec l'École de Musique locale pour proposer des ateliers 
+                        d'initiation musicale de qualité professionnelle.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Tarifs Section -->
-        
-        
+
     </main>
 
     <!-- Footer -->
-    <footer class="footer" role="contentinfo">
+    <footer class="footer">
         <div class="container">
             <div class="footer__content">
-                <div class="footer__section">
-                    <h3 class="footer__title">L'Île aux Oiseaux</h3>
-                    <p>
-                        Centre de loisirs périscolaire offrant des activités enrichissantes 
-                        dans un environnement sécurisé et stimulant.
-                    </p>
-                </div>
-
-                <div class="footer__section">
-                    <h3 class="footer__title">Nos Services</h3>
+                <div>
+                    <h4 class="footer__title">Activités Périscolaires</h4>
                     <ul class="footer__links">
-                        <li><a href="index.html" class="footer__link">Garderie (2 mois - 5 ans)</a></li>
-                        <li><a href="periscolaire.html" class="footer__link">Périscolaire (3 - 9 ans)</a></li>
-                        <li><a href="#" class="footer__link">Activités vacances</a></li>
-                        <li><a href="#" class="footer__link">Programmes éducatifs</a></li>
+                        <li><a href="#" class="footer__link">À propos</a></li>
+                        <li><a href="#" class="footer__link">Notre équipe</a></li>
+                        <li><a href="#" class="footer__link">Nos valeurs</a></li>
                     </ul>
                 </div>
-
-                <div class="footer__section">
-                    <h3 class="footer__title">Contact</h3>
+                <div>
+                    <h4 class="footer__title">Services</h4>
                     <ul class="footer__links">
-                        <li>Zone résidentielle</li>
-                        <li>Rue de l'agence principale Moov</li>
-                        <li>Cotonou, Bénin</li>
-                        <li><a href="tel:+22964834242" class="footer__link">+229 64 83 42 42</a></li>
-                        <li><a href="mailto:ileauxoiseaux2016@gmail.com" class="footer__link">ileauxoiseaux2016@gmail.com</a></li>
+                        <li><a href="#" class="footer__link">Activités sportives</a></li>
+                        <li><a href="#" class="footer__link">Arts créatifs</a></li>
+                        <li><a href="#" class="footer__link">Langues</a></li>
                     </ul>
                 </div>
-
-                <div class="footer__section">
-                    <h3 class="footer__title">Horaires</h3>
+                <div>
+                    <h4 class="footer__title">Informations</h4>
                     <ul class="footer__links">
-                        <li>Lundi - Vendredi</li>
-                        <li>7h30 - 18h00</li>
-                        <li></li>
-                        <li><a href="https://www.facebook.com/lileauxoiseauxcotonou/" target="_blank" rel="noopener noreferrer" class="footer__link">Suivez-nous sur Facebook</a></li>
+                        <li><a href="#" class="footer__link">Horaires</a></li>
+                        <li><a href="#" class="footer__link">Tarifs</a></li>
+                        <li><a href="#" class="footer__link">Inscriptions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Contact</h4>
+                    <ul class="footer__links">
+                        <li><a href="tel:0123456789" class="footer__link">01 23 45 67 89</a></li>
+                        <li><a href="mailto:contact@exemple.fr" class="footer__link">contact@exemple.fr</a></li>
+                        <li><a href="#" class="footer__link">Nous trouver</a></li>
                     </ul>
                 </div>
             </div>
-
             <div class="footer__bottom">
-                <p>© 2016-2025 L'Île aux Oiseaux - Tous droits réservés</p>
-                <p>Développé par <strong>@Fritzel</strong></p>
+                <p>&copy; 2025 Activités Périscolaires. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script type="module" src="assets/js/main.js"></script>
+    <script>
+        // Mobile navigation toggle
+        const mobileToggle = document.querySelector('.header__mobile-toggle');
+        const nav = document.querySelector('.header__nav');
+        
+        mobileToggle.addEventListener('click', () => {
+            nav.classList.toggle('nav--open');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-
