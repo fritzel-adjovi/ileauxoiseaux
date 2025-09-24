@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="assets/css/styles.css" />
 <link rel="stylesheet" href="assets/css/periscolaire.css" />
 
-<style>
+ <style>
         /* Reset and base styles */
         * {
             margin: 0;
@@ -222,22 +222,22 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Info Cards Grid */
+        /* Program Cards Grid - Style des programmes éducatifs */
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
             gap: 2rem;
             margin-bottom: 3rem;
         }
 
         .info-card {
             background: white;
-            padding: 2rem;
             border-radius: 1rem;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
             overflow: hidden;
+            border: 1px solid var(--border-light);
         }
 
         .info-card:hover {
@@ -245,59 +245,83 @@
             box-shadow: var(--shadow-lg);
         }
 
-        .info-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--primary-color);
+        .info-card__header {
+            padding: 1.5rem 2rem 1rem 2rem;
+            border-bottom: 1px solid var(--border-light);
         }
 
-        .info-card--sports::before {
+        .info-card__age {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.375rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .info-card--sports .info-card__age {
             background: var(--accent-color);
         }
 
-        .info-card--language::before {
+        .info-card--language .info-card__age {
             background: #9B59B6;
         }
 
-        .info-card--theater::before {
+        .info-card--theater .info-card__age {
             background: var(--warning-color);
         }
 
         .info-card h3 {
             font-size: 1.5rem;
             color: var(--text-dark);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
         }
 
-        .info-card__icon {
-            font-size: 2rem;
+        .info-card__summary {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .info-card__body {
+            padding: 1.5rem 2rem 2rem 2rem;
+        }
+
+        .info-card__description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
         .activities-list {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .activities-list li {
             margin-bottom: 0.75rem;
-            padding-left: 2rem;
+            padding-left: 1.5rem;
             position: relative;
             color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .activities-list li:last-child {
+            margin-bottom: 0;
         }
 
         .activities-list li::before {
             content: '✓';
             position: absolute;
             left: 0;
+            top: 0;
             color: var(--accent-color);
             font-weight: bold;
+            font-size: 1.1rem;
         }
 
         /* Partnership Section */
@@ -397,7 +421,7 @@
             color: #A0AEC0;
         }
 
-        /* Mobile navigation */
+        /* Mobile navigation et responsive */
         @media (max-width: 768px) {
             .header__nav {
                 display: none;
@@ -445,8 +469,10 @@
                 font-size: 2rem;
             }
 
+            /* Grille responsive - passe en 1 colonne sur mobile */
             .info-grid {
                 grid-template-columns: 1fr;
+                grid-template-rows: auto;
             }
 
             .hero__actions {
