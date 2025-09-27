@@ -1,3 +1,7 @@
+/* ==========================================
+   STYLES SPÉCIFIQUES - PAGE PÉRISCOLAIRE
+   L'Île aux Oiseaux
+   ========================================== */
 
 /* Hero Section personnalisée */
 .hero {
@@ -145,3 +149,515 @@
 }
 
 .planning-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.planning-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.planning-card--lundi::before { background: #4CAF50; }
+.planning-card--mardi::before { background: #2196F3; }
+.planning-card--mercredi::before { background: #FF9800; }
+.planning-card--jeudi::before { background: #9C27B0; }
+.planning-card--vendredi::before { background: #E91E63; }
+
+.planning-card__day {
+    text-align: center;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-6);
+    padding-top: var(--space-2);
+}
+
+.planning-card--lundi .planning-card__day { color: #4CAF50; }
+.planning-card--mardi .planning-card__day { color: #2196F3; }
+.planning-card--mercredi .planning-card__day { color: #FF9800; }
+.planning-card--jeudi .planning-card__day { color: #9C27B0; }
+.planning-card--vendredi .planning-card__day { color: #E91E63; }
+
+.planning-card__activity {
+    margin-bottom: var(--space-4);
+    padding: var(--space-3);
+    background: rgba(0,0,0,0.02);
+    border-radius: var(--radius-lg);
+}
+
+.planning-card__time {
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-blue);
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-1);
+}
+
+.planning-card__desc {
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+}
+
+/* Cours de musique */
+.musique-card {
+    background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
+    color: var(--color-white);
+    text-align: center;
+    margin-top: var(--space-8);
+}
+
+.musique-card__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-xl);
+}
+
+.musique-card__desc {
+    font-size: var(--font-size-lg);
+    opacity: 0.95;
+}
+
+/* Grille d'informations principales */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-8);
+    margin-bottom: var(--space-12);
+}
+
+.info-card {
+    background: var(--color-white);
+    padding: var(--space-8);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--primary-blue);
+}
+
+.info-card--sports::before { background: var(--accent-green); }
+.info-card--language::before { background: #9B59B6; }
+.info-card--theater::before { background: var(--bright-yellow); }
+
+.info-card h3 {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.info-card__icon {
+    font-size: var(--font-size-2xl);
+}
+
+.info-card__highlight {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-lg);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-4);
+}
+
+.info-card__intro {
+    margin-bottom: var(--space-4);
+    color: var(--color-text-secondary);
+}
+
+.activities-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.activities-list li {
+    margin-bottom: var(--space-3);
+    padding-left: var(--space-8);
+    position: relative;
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+}
+
+.activities-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-lg);
+}
+
+/* Carte de partenariat */
+.partnership-card {
+    background: linear-gradient(135deg, var(--bright-yellow) 0%, #FFA000 100%);
+    color: var(--color-text-primary);
+    padding: var(--space-8);
+    border-radius: var(--radius-2xl);
+    text-align: center;
+    margin: var(--space-8) 0;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.partnership-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.partnership-card h3 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    position: relative;
+    z-index: 1;
+}
+
+.partnership-card__desc {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-4);
+    position: relative;
+    z-index: 1;
+}
+
+.partnership-card__note {
+    font-style: italic;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+/* Section Tarifs */
+.tarifs-section {
+    margin-bottom: var(--space-12);
+}
+
+.tarifs-section__title {
+    text-align: center;
+    font-size: var(--font-size-2xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-8);
+    font-weight: var(--font-weight-bold);
+}
+
+.tarifs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+}
+
+.tarif-card {
+    text-align: center;
+    position: relative;
+}
+
+.tarif-card--lundi-mercredi::before { background: #4CAF50; }
+.tarif-card--mardi::before { background: #2196F3; }
+.tarif-card--jeudi::before { background: #9C27B0; }
+.tarif-card--vendredi::before { background: #E91E63; }
+
+.tarif-card__day {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-4);
+    padding-top: var(--space-2);
+}
+
+.tarif-card--lundi-mercredi .tarif-card__day { color: #4CAF50; }
+.tarif-card--mardi .tarif-card__day { color: #2196F3; }
+.tarif-card--jeudi .tarif-card__day { color: #9C27B0; }
+.tarif-card--vendredi .tarif-card__day { color: #E91E63; }
+
+.tarif-card__price {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--bright-red);
+    margin-bottom: var(--space-2);
+}
+
+.tarif-card__price--secondary {
+    font-size: var(--font-size-xl);
+    color: var(--primary-blue);
+    margin-top: var(--space-4);
+}
+
+.tarif-card__price-small {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--bright-red);
+    margin-bottom: var(--space-2);
+}
+
+.tarif-card__desc {
+    color: var(--color-text-muted);
+    line-height: var(--line-height-relaxed);
+}
+
+.tarif-card__desc small {
+    font-size: var(--font-size-sm);
+    opacity: 0.8;
+}
+
+/* Services additionnels */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-6);
+}
+
+.service-card {
+    text-align: center;
+}
+
+.service-card--dejeuner::before { background: var(--bright-yellow); }
+.service-card--gouter::before { background: var(--accent-green); }
+
+.service-card__title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-4);
+    padding-top: var(--space-2);
+}
+
+.service-card--dejeuner .service-card__title { color: var(--bright-yellow); }
+.service-card--gouter .service-card__title { color: var(--accent-green); }
+
+.service-card__price {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--bright-red);
+}
+
+/* Transport scolaire */
+.transport-card {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-green) 100%);
+    color: var(--color-white);
+    text-align: center;
+    margin-top: var(--space-8);
+}
+
+.transport-card__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-xl);
+}
+
+.transport-card__details {
+    font-size: var(--font-size-lg);
+}
+
+.transport-card__details > div {
+    margin-bottom: var(--space-2);
+}
+
+.transport-card__details > div:last-child {
+    margin-bottom: 0;
+}
+
+/* Section contact */
+.contact-section {
+    background: linear-gradient(135deg, var(--bright-red) 0%, var(--primary-blue) 100%);
+    color: var(--color-white);
+    padding: var(--space-16) var(--space-8);
+    border-radius: var(--radius-2xl);
+    text-align: center;
+    margin-top: var(--space-12);
+    box-shadow: var(--shadow-2xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M10,50 Q50,10 90,50 Q50,90 10,50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.contact-section h2 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-4);
+    position: relative;
+    z-index: 1;
+}
+
+.contact-section__desc {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-6);
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-section__address {
+    background: rgba(255,255,255,0.15);
+    padding: var(--space-4);
+    border-radius: var(--radius-xl);
+    margin: var(--space-6) auto;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-address__label {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-1);
+}
+
+.contact-address__text {
+    font-size: var(--font-size-base);
+    opacity: 0.9;
+}
+
+.phone-number {
+    display: inline-block;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    background: rgba(255,255,255,0.2);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-full);
+    margin: var(--space-6) 0;
+    text-decoration: none;
+    color: var(--color-white);
+    transition: all var(--transition-normal);
+    position: relative;
+    z-index: 1;
+}
+
+.phone-number:hover {
+    background: rgba(255,255,255,0.3);
+    transform: scale(1.05);
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.contact-section__actions {
+    margin-top: var(--space-8);
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-section__closing {
+    margin-top: var(--space-8);
+    font-size: var(--font-size-lg);
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero__title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .hero__subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    .info-grid,
+    .planning-grid,
+    .tarifs-grid,
+    .services-grid,
+    .horaires-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-3);
+    }
+
+    .phone-number {
+        font-size: var(--font-size-xl);
+        padding: var(--space-3) var(--space-6);
+    }
+
+    .contact-section h2 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .contact-section__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome-message,
+    .partnership-card,
+    .contact-section {
+        padding: var(--space-6);
+    }
+
+    .tarifs-section__title,
+    .musique-card__title {
+        font-size: var(--font-size-xl);
+    }
+}
+
+/* Print styles */
+@media print {
+    .contact-section,
+    .hero {
+        background: var(--color-white) !important;
+        color: var(--color-text-primary) !important;
+    }
+    
+    .phone-number,
+    .btn {
+        background: transparent !important;
+        color: var(--color-text-primary) !important;
+        border: 1px solid var(--color-text-primary) !important;
+    }
+}
